@@ -14,6 +14,7 @@ shoehorns are made of solid gold, which hardly seems
 practical.".
 
 There is a shiny apple in the Beautiful Breezeway.
+It is edible.
 ```
 
 Makes:
@@ -27,9 +28,23 @@ practical.
 > 
 > There is a shiny apple here.
 
-### How to make places to move around in. 
-(Coming)
+### [How to make places to move around in.](places/)  
+![20%](https://progress-bar.dev/20) 20% complete
 
-### [How to fill your those places with things.](things/)
+Follow the time-honored tradition of making rooms people can walk in compass directions to get to.
+
+### [How to fill your those places with things.](things/)  
+![90%](https://progress-bar.dev/90) 90% complete
 
 Things fill the real world and your world should probably have them.
+
+### ["When play begins:"](setup/) 
+![1%](https://progress-bar.dev/1) 1% complete
+
+How to do some fancy setup to polish your world and make it unique.
+
+### [How to use verbs and actions.](actions/) 
+![1%](https://progress-bar.dev/1) 1% complete
+
+Let people unbend paperclips, ring bells, ride horses, and flip coins.
+
