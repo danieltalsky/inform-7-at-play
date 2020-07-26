@@ -27,24 +27,44 @@ shoehorns are made of solid gold, which hardly seems
 practical.  
 > 
 > There is a shiny apple here.
+>  
+>  **\>eat apple**
 
 ### [How to make places to move around in.](places/)  
-![20%](https://progress-bar.dev/20) 20% complete
+20% complete  
+![20%](https://progress-bar.dev/20)  
 
-Follow the time-honored tradition of making rooms people can walk in compass directions to get to.
+
+The real world is a place, and has several places inside it.  Your imaginary world Follow the time-honored tradition of making rooms people can walk in compass directions to get to.
 
 ### [How to fill your those places with things.](things/)  
-![90%](https://progress-bar.dev/90) 90% complete
+90% complete  
+![90%](https://progress-bar.dev/90) 
 
 Things fill the real world and your world should probably have them.
 
 ### ["When play begins:"](setup/) 
-![1%](https://progress-bar.dev/1) 1% complete
+1% complete  
+![1%](https://progress-bar.dev/1) 
 
 How to do some fancy setup to polish your world and make it unique.
 
 ### [How to use verbs and actions.](actions/) 
-![1%](https://progress-bar.dev/1) 1% complete
+10% complete  
+![10%](https://progress-bar.dev/10) 
 
 Let people unbend paperclips, ring bells, ride horses, and flip coins.
 
+.
+.
+.
+
+.
+.
+.
+
+### Technical @TODOs
+
+#### Inform 7 output -> markdown converter (python?)
+
+#### Figure out a way to let github code blocks wrap so it can work on mobile.
