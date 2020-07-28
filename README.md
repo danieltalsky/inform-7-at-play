@@ -36,11 +36,15 @@ practical.
 
 The real world is a place, and has several places inside it.  You can have your imaginary world follow the time-honored tradition of making rooms people can walk in compass directions to get to.
 
-### [How to fill your those places with things.](things/)  
+### [How to fill those places with things.](things/)  
 90% complete  
 ![90%](https://progress-bar.dev/90) 
 
 Things fill the real world and your world should probably have them.
+
+### [How to put semi-convincing people in your places.](people/) 
+1% complete  
+![1%](https://progress-bar.dev/1) 
 
 ### ["When play begins:"](setup/) 
 1% complete  
@@ -53,6 +57,12 @@ How to do some fancy setup to polish your world and make it unique.
 ![10%](https://progress-bar.dev/10) 
 
 Let people unbend paperclips, ring bells, ride horses, and flip coins.
+
+### [Annoyingly complicated rules for naming things](naming/) 
+1% complete  
+![1%](https://progress-bar.dev/1) 
+
+Don't even bother reading this until you run into a problem with naming people, places, or things.
 
 .
 .
