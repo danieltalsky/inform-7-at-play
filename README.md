@@ -28,7 +28,7 @@ practical.
 > 
 > There is a shiny apple here.
 >  
->  **\>eat apple**
+>  **\>`eat apple`**
 
 ### [How to make places\.](places/)  
 30% complete  
@@ -58,11 +58,15 @@ How to do some fancy setup to polish your world and make it unique.
 
 Let people unbend paperclips, ring bells, ride horses, and flip coins.
 
-### [Annoyingly complicated rules for naming things](naming/) 
+### [Annoyingly complicated rules for naming things.](naming/) 
 1% complete  
 ![1%](https://progress-bar.dev/1) 
 
 Don't even bother reading this until you run into a problem with naming people, places, or things.
+
+### [I have no idea what any of this means.](faq/)
+
+What is Inform 7?  Who are you?  How do you do any of this?  What are you talking about?
 
 .
 .
