@@ -30,23 +30,20 @@ Run our program and we have a world we can interact with:
 >**Place**  
 >You can see a red ball, a green ball, and a hammer here  
 >  
->\>**look at the ball**  
->  
+>\>**`look at the ball`**  
 >Which do you mean, the red ball or the green ball?  
 >  
->\>**green**  
->  
+>\>**`green`**  
 >You see nothing special about the green ball  
->**get hammer**  
->  
+>
+>**`get hammer`**  
 >Taken.  
 >  
-> \>**inventory**  
->  
+> \>**`inventory`**  
 >You are carrying:  
 > &nbsp;&nbsp;&nbsp;&nbsp; a hammer  
 >  
->\>**look**  
+>\>**`look`**  
 >  
 >**Place**  
 >You're in the only place.  
@@ -80,7 +77,7 @@ The description is "It's playing ESPN 8, the Ocho.".
 ```
 > You can see a television here.  
 >  
->\>**look tv**  
+>\>**`look tv`**  
 >You can't see any such thing  
 
 Humans know that TV, teevee, telly, and idiot box all mean television, but Inform doesn't.  There's an easy way to tell it, though:
@@ -94,13 +91,13 @@ Now:
 
 > You can see a television here.  
 >
->\>**look tv**  
+>\>**`look tv`**  
 > It's playing ESPN 8, the Ocho.  
 >  
->\>**look telly**  
+>\>**`look telly`**  
 >It's playing ESPN 8, the Ocho.  
 >  
->\>**look idiot box**  
+>\>**`look idiot box`**  
 >It's playing ESPN 8, the Ocho  
 
 *{shortcut}* instead of multiple "understand" statements, we can combine them like this:
@@ -172,7 +169,7 @@ There is an anvil bolted into the ground in The Place.
 The description is 
 "The anvil is bolted into the ground for real."
 ```
->\>**take anvil**  
+>\>**`take anvil`**  
 >Taken  
 
 Damn.  That's because objects in Inform can be `portable` or `fixed in place`.  By default, they're portable.  Let's put a stop to that.
@@ -183,7 +180,7 @@ It is fixed in place.
 The description is 
 "The anvil is bolted into the ground for real.".
 ```
->\>**take anvil**  
+>\>**`take anvil`**  
 >That's fixed in place.  
 
 That'll show 'em.
@@ -196,7 +193,7 @@ There is a hammer in The Place.
 The description is 
 "It's an OK hammer but it has a solid gold handle."
 ```
->\>**look at handle**  
+>\>**`look at handle`**  
 >You can't see any such thing  
 
 Not what we want.  Luckily there's an easy way to fix it.
@@ -214,7 +211,7 @@ The description is
 >  
 >You can see a hammer and a handle here  
 >  
->\>**take handle**  
+>\>**`take handle`**  
 >Taken.  
 
 Well that's not right either.    The handle is listed separately and we can take it.  Here's how we prevent that in Inform:
@@ -229,13 +226,13 @@ The handle is a part of the hammer.
 >  
 >You can see a hammer here.  
 >  
->**look hammer**  
+>**`look hammer`**  
 >It definitely has a handle.  
 >  
->**look handle**  
+>**`look handle`**  
 >You see nothing special about the handle.  
 >  
->**take handle**  
+>**`take handle`**  
 >That seems to be a part of the hammer  
 
 Perfect.  Now it doesn't list the hammer or let us take it, but it knows the handle exists.  Not only that but parts can have parts.
@@ -331,7 +328,7 @@ I love figs!
 
 You can see a yummy fig here.
 
->\>**eat fig**  
+>\>**`eat fig`**  
 >That's plainly inedible  
 
 Easy to remedy:
@@ -341,11 +338,11 @@ There is a yummy fig here.  It is edible.
 ```
 > You can see a yummy fig here.  
 >  
->\>**eat fig**  
+>\>**`eat fig`**  
 >(first taking the yummy fig)  
 >You eat the yummy fig. Not bad.  
 >  
->\>**look fig**   
+>\>**`look fig`**   
 >You can't see any such thing  
 
 ### Things you can wear
@@ -359,7 +356,7 @@ Naturally someone is going to want to wear it.
   
 > You can see a shirt here.  
 >  
->\>**wear shirt**  
+>\>**`wear shirt`**  
 >(first taking the shirt)  
 >You can't wear that  
 
@@ -372,18 +369,18 @@ It is wearable.
 
 > You can see a shirt here.    
 >  
->\>**wear shirt**  
+>\>**`wear shirt`**  
 >(first taking the shirt)  
 >You put on the shirt.  
 >  
->\>**inventory**  
+>\>**`inventory`**  
 >You are carrying:  
 >&nbsp;&nbsp;&nbsp;&nbsp;a shirt (being worn)  
 >  
->\>**take off shirt**  
+>\>**`take off shirt`**  
 >You take off the shirt.  
 >
->\>**inventory**  
+>\>**`inventory`**  
 >You are carrying:  
 >&nbsp;&nbsp;&nbsp;&nbsp;a shirt  
 
@@ -395,8 +392,8 @@ What if you want to have the player wearing things right from the start?
 The player wears red pants.
 ```
 
->\>**inventory**
->You are carrying:
+>\>**`inventory`**  
+>You are carrying:  
 >&nbsp;&nbsp;&nbsp;&nbsp;red pants (being worn)
 
 (Notice that we don't have to say the pants are `wearable`.)
@@ -425,7 +422,7 @@ There is a small carved monkey figurine in the Place.
 ```
 > You can see a deep wooden bowl and a small carved monkey figurine here.  
 >   
->\>**put the figurine in the bowl**  
+>\>**`put the figurine in the bowl`**  
 >(first taking the small carved monkey figurine)  
 >That can't contain things  
 
@@ -443,13 +440,13 @@ Now we get:
 >(first taking the small carved monkey figurine)  
 >You put the small carved monkey figurine into the deep wooden bowl.  
 >  
->\>**look bowl**  
+>\>**`look bowl`**  
 >In the deep wooden bowl is a small carved monkey figurine  
 >  
->\>**take the figurine**  
+>\>**`take the figurine`**  
 >Taken.  
 >  
->\>**look bowl**  
+>\>**`look bowl`**  
 >The deep wooden bowl is empty  
 
 If we want something to start out inside a container, that's simple too:
@@ -480,16 +477,16 @@ With that one small sentence, we get this:
 
 >You can see a jewelry box (in which is a gentle necklace) here.  
 >  
->\>**close box**  
+>\>**`close box`**  
 >You close the jewelry box.  
 >  
->\>**look box**  
+>\>**`look box`**  
 >It's a super fancy box.  
 >  
->\>**open box**  
+>\>**`open box`**  
 >You open the jewelry box, revealing a gentle necklace.  
 >  
->\>**look box**  
+>\>**`look box`**  
 >It's a super fancy box.  
 >  
 >In the jewelry box is a gentle necklace  
@@ -522,7 +519,7 @@ It is a closed openable transparent container.
 There is a plush hamster in the ball.
 ```
 
->\>**look hamster ball**  
+>\>**`look hamster ball`**  
 >In the hamster ball is a plush hamster  
 
 ### Things that can be switched on or off

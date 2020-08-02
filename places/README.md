@@ -21,7 +21,7 @@ Run our program and we have a world we can interact with:
 > **Featureless Room**  
 > You are in a room, that much you can tell.
 >
-> **\>walk north**  
+> **\>`walk north`**  
 >You can't go that way.
 
 See, so we just created a whole (very small) world with just three lines of English language text.  We say something `is a room` and Inform knows it's a place.  We give it a description, and Inform knows that's how to describe the room.
@@ -83,10 +83,10 @@ Now you can move around:
 > **Northern Tip of the Island**  
 > A very rocky place.  
 >
-> **\>north**  
+> **\>`north`**  
 > You can't go that way.  
 >
-> **\>south**  
+> **\>`south`**  
 >
 > **Southern Tip of the Island**  
 > A very sandy place
