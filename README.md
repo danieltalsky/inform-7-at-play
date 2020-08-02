@@ -58,6 +58,12 @@ How to do some fancy setup to polish your world and make it unique.
 
 Let people unbend paperclips, ring bells, ride horses, and flip coins.
 
+### [Common Mistakes (and How to Fix Them)](naming/) 
+1% complete  
+![1%](https://progress-bar.dev/1) 
+
+Sometimes Inform doesn't understand what you're trying to tell it to do.  Here's how you can avoid or figure out some common problems.
+
 ### [Annoyingly complicated rules for naming things.](naming/) 
 1% complete  
 ![1%](https://progress-bar.dev/1) 
