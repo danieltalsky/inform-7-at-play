@@ -28,9 +28,9 @@ practical.
 > 
 > There is a shiny apple here.
 >  
->  **\>`eat apple`**
-> (first taking the shiny apple)
-> You eat the shiny apple. Not bad.
+>  **\>`eat apple`**  
+> (first taking the shiny apple)  
+> You eat the shiny apple. Not bad.  
 
 
 ### [How to make places\.](places/)  
