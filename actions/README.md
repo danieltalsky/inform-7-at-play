@@ -34,80 +34,80 @@ With just under 100 words of description, Inform understands all these actions a
 >    
 > You can see a completely standard video game crate and your Great Great Grandson here.  
 >   
-> **>think**  
+> **\>`think`**  
 > What a good idea.  
 >   
-> **>look self**  
+> **\>`look self`**  
 > As good-looking as ever.  
 >   
-> **>look at the crate**  
+> **\>`look at the crate`**     
 > You see nothing special about the completely standard video game crate.  
 >   
-> **>look under the crate**  
+> **\>`look under the crate`**   
 > You find nothing of interest.  
 >   
-> **>push the crate**  
+> **\>`push the crate`**  
 > Nothing obvious happens.  
 >   
-> **>push the crate south**  
+> **\>`push the crate south`**     
 >   
-> **Tajikistan**  
+> **Tajikistan**
 > Officially the Republic of Tajikistan.  
 >   
-> **>look**  
+> **\>`look`**  
 > **Tajikistan**  
 > Officially the Republic of Tajikistan.  
 >   
 > You can see a completely standard video game crate here.  
 >   
-> **>push the crate north** 
+> **\>`push the crate north`**  
 >   
 > **Kyrgyzstan**  
 > Officially the Kyrgyz Republic  
 >   
 > You can see your Great Great Grandson here.  
 >   
-> **>chop crate**  
+> **\>`chop crate`**  
 > Cutting it up would achieve little.  
 > 
-> **>smell grandson**  
+> **\>`smell grandson`**   
 > You smell nothing unexpected.  
 >   
-> **>kiss grandson** 
+> **\>`kiss grandson`**   
 > your Great Great Grandson might not like that.  
 > 
-> **>kiss crate** 
+> **\>`kiss crate`**   
 > You can only do that to something animate.  
 >   
-> **>attack grandson**
+> **\>`attack grandson`**  
 > Violence isn't the answer to this one.  
 >   
-> **>ask grandson about apocolypse now** 
+> **\>`ask grandson about Apocalypse Now`**  
 > There is no reply.  
 >   
-> **>tell grandson about monkeys**  
+> **\>`tell grandson about monkeys`**    
 > This provokes no reaction.  
 >   
-> **>consult grandson about existentialism**  
+> **\>`consult grandson about existentialism`**    
 > You discover nothing of interest in your Great Great Grandson.  
 >   
-> **>wake grandson up**  
+> **\>`wake grandson up`**    
 > That seems unnecessary.  
 >   
-> **>wipe jumpsuit**  
+> **\>`wipe jumpsuit`**     
 > You rub the hand-made canvas jumpsuit.  
 >   
-> **>get pocket**  
+> **\>`get pocket`**    
 > That seems to be a part of the hand-made canvas jumpsuit.  
 >   
-> **>open pocket**  
+> **\>`open pocket`**   
 > You open the pocket, revealing a creepy pewter figurine.  
 >   
-> **>put figurine on crate**  
+> **\>`put figurine on crate`**  
 > (first taking the creepy pewter figurine)  
 > That seems to belong to your Great Great Grandson.  
 >  
-> **>polish figurine**  
+> **\>`polish figurine`**     
 > You rub the creepy pewter figurine  
 
 
@@ -119,7 +119,7 @@ Inform leaves it to you to decide what actions are important.  It can't think of
 
 So if we want to:
 
-> **\>bend paperclip**
+> **\>`bend paperclip`**   
 
 ## Simple actions with `Mistake`
 
@@ -132,7 +132,7 @@ Understand "yell at the statue" as a mistake
 
 ### @TODO add a note: about all 3 uses of `understand`
 
-> **\>yell at the statue**  
+> **\>`yell at the statue`**  
 > The statue does not understand how serious you are about this
 
 ## Simple Actions with `Instead`
