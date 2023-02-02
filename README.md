@@ -46,8 +46,8 @@ The real world is a place, and has several places inside it.  You can have your 
 Things fill the real world and your world should probably have them.
 
 ### [How to put semi-convincing people in your places.](people/) 
-1% complete  
-![1%](https://progress-bar.dev/1) 
+6% complete  
+![6%](https://progress-bar.dev/1) 
 
 ### ["When play begins:"](setup/) 
 1% complete  
