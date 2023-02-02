@@ -36,7 +36,7 @@ Run our program and we have a world we can interact with:
 >\>**`green`**  
 >You see nothing special about the green ball  
 >
->**`get hammer`**  
+>\>**`get hammer`**  
 >Taken.  
 >  
 > \>**`inventory`**  
