@@ -33,42 +33,35 @@ practical.
 > You eat the shiny apple. Not bad.  
 
 
-### [How to make places\.](places/)  
-30% complete  
-![30%](https://progress-bar.dev/30)  
+### [How to make places\.](places/)   
+![60%](https://progress-bar.dev/60)
 
 The real world is a place, and has several places inside it.  You can have your imaginary world follow the time-honored tradition of making rooms people can walk in compass directions to get to.
 
 ### [How to fill those places with things.](things/)  
-90% complete  
-![90%](https://progress-bar.dev/90) 
+![90%](https://progress-bar.dev/90)
 
 Things fill the real world and your world should probably have them.
 
 ### [How to put semi-convincing people in your places.](people/) 
-6% complete  
-![6%](https://progress-bar.dev/1) 
+![6%](https://progress-bar.dev/6)
 
 ### ["When play begins:"](setup/) 
-1% complete  
-![1%](https://progress-bar.dev/1) 
+![1%](https://progress-bar.dev/1)
 
 How to do some fancy setup to polish your world and make it unique.
 
 ### [How to use verbs and actions.](actions/) 
-10% complete  
 ![10%](https://progress-bar.dev/10) 
 
 Let people unbend paperclips, ring bells, ride horses, and flip coins.
 
 ### [Common Mistakes (and How to Fix Them)](naming/) 
-1% complete  
-![1%](https://progress-bar.dev/1) 
+![1%](https://progress-bar.dev/1)
 
 Sometimes Inform doesn't understand what you're trying to tell it to do.  Here's how you can avoid or figure out some common problems.
 
-### [Annoyingly complicated rules for naming things.](naming/) 
-1% complete  
+### [Annoyingly complicated rules for naming things.](naming/)  
 ![1%](https://progress-bar.dev/1) 
 
 Don't even bother reading this until you run into a problem with naming people, places, or things.

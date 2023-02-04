@@ -91,7 +91,70 @@ Now you can move around:
 > **Southern Tip of the Island**  
 > A very sandy place
 
-## @TODO up and down
-## @TODO 
+### Up and Down
+
+The compass directions let you go in eight different directions from any location, but you have two more directions you can use.  Just like in the real world you can also go up or down, like this.
+
+```inform7
+The little clearing is a room.   
+The description is "A little clearing in the forest.  There is a tree with a treehouse above you, and a small hole in the ground leading to a burrow."
+
+The treehouse is a room above the little clearing.
+The description is "Girls are allowed."
+The little clearing is above the burrow in the ground. 
+[[When you use north and south you can just specify one of the rooms is north and the other room with know it's south.  With "above" and "below" you have to specify both.]]
+
+The burrow in the ground is a room below the little clearing.
+The description is "You can just barely fit down here."
+The little clearing is below the treehouse.
+```
+
+> **little clearing** 
+> A little clearing in the forest.  There is a tree with a treehouse above you, and a small hole in the ground leading to a burrow.
+> 
+> **\>`up`**
+> 
+> **treehouse** 
+> Girls are allowed.
+> 
+> **\>`down`**
+> 
+> **little clearing**  
+> A little clearing in the forest.  There is a tree with a treehouse above you, and a small hole in the ground leading to a burrow.
+> 
+> **\>`down`**
+> 
+> **burrow in the ground**  
+> You can just barely fit down here
+
+### In and Out
+
+There's one more way Inform lets you move between rooms, and that's `in` and `out`.  A room can be `inside` or `outside` another room like this:
+
+```inform7
+The dog kennel is a room.  
+The dog kennel is inside from the mudroom.
+[[It doesn't work to say:
+"The dog kennel is a room inside the mudroom." because Inform gets confused, so you need to write it this way.]]
+The description is "It's uncomfortable in here and you feel silly."
+```
+
+This will allow:
+
+> **mudroom**  
+> The mudroom is actually very muddy.  There is a large dog kennel on the floor that you could probably fit inside.
+> 
+> **\>`in`**
+> 
+> **dog kennel**   
+> It's uncomfortable in here and you feel silly.
+> 
+> **\>`out`**
+> 
+> **mudroom**  
+> The mudroom is actually very muddy.  There is a large dog kennel on the floor that you could probably fit inside.
+
+## Enjoy the Scenery
+
 ## @TODO scenery
 ## @TODO grouped areas
