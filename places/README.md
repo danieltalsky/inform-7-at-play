@@ -61,13 +61,15 @@ The description is "Cylindrical and quite mossy."
 
 Any place you can imagine needs to be `a room` for Inform to understand that it is a place and not a thing or an action.
 
-### Due North
+## Going Places
 
 When you're telling interactive stories, it helps people understand the space around them if they can move around.
 
+### Due North
+
 Inform has the idea of compass directions built in.  It knows north and south and east and west.  It knows southwest, etc.
 
-You can do this:
+You can do this to give two rooms a relationship with each other:
 
 ```inform7
 The Northern Tip of the Island is a room.
@@ -144,17 +146,88 @@ This will allow:
 > **mudroom**  
 > The mudroom is actually very muddy.  There is a large dog kennel on the floor that you could probably fit inside.
 > 
-> **\>`in`**
+> **\>`in`**  
 > 
 > **dog kennel**   
 > It's uncomfortable in here and you feel silly.
 > 
-> **\>`out`**
+> **\>`out`**  
 > 
 > **mudroom**  
 > The mudroom is actually very muddy.  There is a large dog kennel on the floor that you could probably fit inside.
 
 ## Enjoy the Scenery
 
-## @TODO scenery
-## @TODO grouped areas
+Now you know how to let people walk around your worlds, but walking around gets boring if there's nothing to see.  You can make your world much more convincing if people can look at specific things for more detail in your rooms.
+
+Consider this room:
+
+```inform7
+The art gallery is a room.
+The description is "This is not the most impressive art gallery you've ever seen.  It only has two pieces of art, a sculpture on a pedestal and a painting hung on the wall."
+```
+
+That creates this situation:
+
+> **art gallery**  
+> This is not the most impressive art gallery you've ever seen.  It only has two pieces of art, a sculpture on a pedestal and a painting hung on the wall.
+> 
+> **\>`look at sculpture`**  
+> You can't see any such thing.
+> 
+> **\>`look at painting`**  
+> You can't see any such thing
+
+That's not very convincing, and it's actually pretty confusing.  Inform doesn't know about things just because you talk about them in your description.  You have to "make" them just like rooms.  It's pretty simple, however, just add this:
+
+```inform7
+The sculpture is scenery in the art gallery.
+The painting is scenery in the art gallery.
+```
+
+Now we get this:
+
+> **\>`look at sculpture`**  
+> You see nothing special about the sculpture.
+> 
+> **\>`look at painting`**  
+> You see nothing special about the painting.
+>
+> **\>`look at pedestal`**  
+>You can't see any such thing
+
+Whoops.  That's a little better, but if we're willing to put in the work we can make our world richer and more consistent.  We can describe everything someone might look at (within reason).  Scenery can have a description just like a room.  Let's put it all together:
+
+```inform7
+The art gallery is a room.
+The description is "This is not the most impressive art gallery you've ever seen.  It only has two pieces of art, a sculpture on a pedestal and a painting hung on the wall."
+
+The sculpture is scenery in the art gallery.
+The description is "It's a sculpture of a Gordian Knot made out of marble."
+
+The painting is scenery in the art gallery.
+The description is "The painting is abstract with bold red and blue brushstrokes."
+
+The pedestal is scenery in the art gallery.
+The description is "A very boring grey pedastal."
+```
+
+Now you have a much more convincing place:
+
+> **art gallery**  
+> This is not the most impressive art gallery you've ever seen.  It only has two pieces of art, a sculpture on a pedestal and a painting hung on the wall.
+> 
+> **\>`look at sculpture`**  
+It's a sculpture of a Gordian Knot made out of marble.
+> 
+> **\>`look at painting`**  
+> The painting is abstract with bold red and blue brushstrokes.
+>
+> **\>`look at pedestal`**  
+> A very boring grey pedastal.
+> 
+> **\>`look at brushstrokes`**  
+> You can't see any such thing
+
+## @TODO backgrounds
+## @TODO grouped areas?

@@ -34,7 +34,7 @@ practical.
 
 
 ### [How to make places\.](places/)   
-![60%](https://progress-bar.dev/60)
+![80%](https://progress-bar.dev/80)
 
 The real world is a place, and has several places inside it.  You can have your imaginary world follow the time-honored tradition of making rooms people can walk in compass directions to get to.
 
@@ -44,7 +44,7 @@ The real world is a place, and has several places inside it.  You can have your 
 Things fill the real world and your world should probably have them.
 
 ### [How to put semi-convincing people in your places.](people/) 
-![6%](https://progress-bar.dev/6)
+![10%](https://progress-bar.dev/10)
 
 ### ["When play begins:"](setup/) 
 ![1%](https://progress-bar.dev/1)
