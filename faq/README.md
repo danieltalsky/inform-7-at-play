@@ -79,4 +79,14 @@ Inform 7 is the first one that makes such a solid attempt to let you write instr
 
 ### Is Inform 7 Open Source?
 
-No, but Graham Nelson is working on it.
+Yes!
+
+ .   
+ .     
+ .       
+
+---
+
+## TO DO: Reminders to myself:
+- Installation Instructions
+- More info on contributing to open source

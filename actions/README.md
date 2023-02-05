@@ -137,4 +137,18 @@ Understand "yell at the statue" as a mistake
 
 ## Simple Actions with `Instead`
 
-### @todo
+---
+
+## TO DO: Reminders to myself:
+- Overriding the current verb set
+    - list of the current verb set
+- Creating new verbs
+- "If"
+- Rulebooks: the verb lifecycle
+    - Before
+    - Instead
+    - Check
+    - Carry out
+    - After
+    - Report
+- Relations and state for nouns, changing state

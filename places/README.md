@@ -209,7 +209,7 @@ The painting is scenery in the art gallery.
 The description is "The painting is abstract with bold red and blue brushstrokes."
 
 The pedestal is scenery in the art gallery.
-The description is "A very boring grey pedastal."
+The description is "A very boring grey pedestal."
 ```
 
 Now you have a much more convincing place:
@@ -224,10 +224,23 @@ It's a sculpture of a Gordian Knot made out of marble.
 > The painting is abstract with bold red and blue brushstrokes.
 >
 > **\>`look at pedestal`**  
-> A very boring grey pedastal.
+> A very boring grey pedestal.
 > 
 > **\>`look at brushstrokes`**  
 > You can't see any such thing
 
-## @TODO backgrounds
-## @TODO grouped areas?
+Whoops.  You have to decide how detailed you want to get describing every little thing, but there's a quick trick that helps.  You can add:
+
+```inform7
+Understand "brushstrokes" as the painting.
+```
+
+This is an improvement:
+
+> **\>`look at brushstrokes`**  
+> The painting is abstract with bold red and blue brushstrokes.
+
+## TO DO: Reminders to myself:
+- scenery vs backgrounds
+- regions vs "everywhere"
+

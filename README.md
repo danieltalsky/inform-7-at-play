@@ -67,23 +67,22 @@ Sometimes Inform doesn't understand what you're trying to tell it to do.  Here's
 Don't even bother reading this until you run into a problem with naming people, places, or things.
 
 ### [I have no idea what any of this means.](faq/)
+![70%](https://progress-bar.dev/70) 
 
 What is Inform 7?  Who are you?  How do you do any of this?  What are you talking about?
 
-.
-.
-.
+ .   
+ .     
+ .       
 
-.
-.
-.
+---
 
-### Technical @TODOs
+## TO DO: Reminders to myself:
 
-#### Inform 7 output -> markdown converter (python?)
+### Technical
+- Inform 7 output -> markdown converter (python?)
+- Figure out a way to let github code blocks wrap so it can work on mobile.
 
-#### Figure out a way to let github code blocks wrap so it can work on mobile.
+### Content 
 
-### Content @TODOs
-
-#### Do a "how to do Hit Points if you REALLY must" section.
+- Do a "how to do Hit Points if you REALLY must" section.

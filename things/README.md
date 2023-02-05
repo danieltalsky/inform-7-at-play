@@ -522,9 +522,14 @@ There is a plush hamster in the ball.
 >\>**`look hamster ball`**  
 >In the hamster ball is a plush hamster  
 
-### Things that can be switched on or off
-@TODO
-### Things that make light
-@TODO
-### On-stage and off-stage
-@TODO
+ .   
+ .     
+ .       
+
+---
+
+## TO DO: Reminders to myself:
+
+- Things that can be switched on or off
+- Things that make light
+- On-stage and off-stage

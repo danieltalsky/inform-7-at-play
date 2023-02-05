@@ -94,3 +94,24 @@ And now:
 
 >\>**`look self`**  
 > You are a weird alien with tentacles instead of arms.
+
+  
+ .   
+ .     
+ .       
+
+---
+
+## TO DO: Reminders to myself:
+- Use no scoring, the serial comma and American dialect.
+- Use full-length room descriptions.
+- Releases: 
+    - Release along with a website.  Release along with the source text.
+    - The release number is 12.
+- Fun default verb rules for things like `jump`, `pray`, `sing`, `wake up`, 
+- Using rules:
+    - Understand "use [a closed openable thing]" as opening.
+    - Understand "use [a open openable thing]" as closing.
+    - Understand "use [a switched off device]" as switching on.
+    - Understand "use [a switched on device]" as switching off.
+    - Understand "use [an edible thing]" as eating.

@@ -33,4 +33,15 @@ All we have to do is say the rhino is an animal and not a thing and right away w
 >\>**`feed apple to rhino`**  
 > The rhino doesn't seem interested.
 
+ .   
+ .     
+ .       
 
+---
+## TO DO: Reminders to myself:
+- Men and women
+- Ask ... about
+- Tell ... about
+- People moving
+- Violence
+- Saying things in response to events
