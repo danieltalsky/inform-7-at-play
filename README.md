@@ -47,7 +47,7 @@ Things fill the real world and your world should probably have them.
 ![10%](https://progress-bar.dev/10)
 
 ### ["When play begins:"](setup/) 
-![1%](https://progress-bar.dev/1)
+![20%](https://progress-bar.dev/20)
 
 How to do some fancy setup to polish your world and make it unique.
 
