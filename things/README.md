@@ -109,17 +109,6 @@ You can also go even shorter by doing this trick:
 ```inform7
 Understand "TV/telly/teevee" as television.
 ```
-An important exception though, this doesn't work:
-
-```inform7
-Understand "TV/idiot box" as television.
-```
-Why?  It thinks you mean:
-@TODO add exception for "tv/idiot box"
-
-```inform7
-Understand "TV box" or "idiot box" as television.
-```
 
 There's another reason we'd want to use this technique.  Consider this:
 
@@ -139,7 +128,7 @@ The woodpecker holes are a part of the log.
 Sometimes it's great to go into all this detail, but sometimes when you have a whole forest to fill up, and you want your game to respond to "look at the lichens" you can do this:
 
 ```inform7
-Understand "moss/mosses/lichen/lichens/mushroom/mushrooms/knot/knots/hole/holes/woodpecker" or "woodpecker holes" as the log.
+Understand "moss/mosses/lichen/lichens/mushroom/mushrooms/knot/knots/hole/holes" or "woodpecker holes" as the log.
 ```
 It's a nicer effect to have each individual thing described, using parts, but it's better than nothing to just add an `understand` statement so the game says this as little as possible when people are trying to look deeper into the descriptions of your game:
 
