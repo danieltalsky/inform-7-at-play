@@ -117,25 +117,83 @@ You will need to tell Inform how to handle them yourself.  Luckily Inform gives 
 
 Inform leaves it to you to decide what actions are important.  It can't think of the effects of every possible action!
 
-So if we want to:
+## Piggyback onto an existing action: understand the command!
 
-> **\>`bend paperclip`**   
+Inform already has a good assortment of actions.  You can read <a href="https://inform-7-handbook.readthedocs.io/en/latest/chapter_4_actions/built-in_actions/" target="_blank">a list of them in the official Inform 
+documentation</a>, but here are some useful ones you can grab and make your own:
 
-## Simple actions with `Mistake`
+ - touching
+ - turning
+ - attacking
+ - smelling
+ - rubbing
+ - looking under
 
-One of the easiest ways to make an action work is by making it a `mistake`:
+Let's say you want to use another word for "smell":
+
+```inform7
+The Boudoir is a room.  
+There is an empty perfume bottle in the boudoir.  
+The description of the bottle is "It's an enticing and elaborate perfume bottle.  It looks as if you could just inhale its scent."
+```
+
+Let's try inhaling:
+
+> **Boudoir**  
+> You can see an empty perfume bottle here.
+>
+> **\>`look bottle`**  
+> It's an enticing and elaborate perfume bottle.  It looks as if you could just inhale its scent.
+> 
+> **\>`smell bottle`**  
+> You smell nothing unexpected.
+> 
+> **\>`inhale bottle`**  
+> That's not a verb I recognise.
+
+There's an easy way to make a synonym for smelling:
+
+```inform7
+Understand the command "inhale" as "smell".
+```
+
+Now inhale means smell also:
+
+> **\>`inhale bottle`**  
+> You smell nothing unexpected.
+
+You might remember the word `understand` from the chapter on things, where
+you can [use it to let you to call a single object by multiple names](../things/README.md#things-with-lots-of-names).
+
+Here we're using it in a similar way: this new name is the same as a name you already
+"understand".
+
+## Make a `mistake`
+
+One of the easiest ways to make a totally new action work is by making it a `mistake`:
 
 ```inform7
 Understand "yell at the statue" as a mistake 
 ("The statue does not understand how serious you are about this.").
 ```
 
-### @TODO add a note: about all 3 uses of `understand`
+Here you're telling it to understand a whole command as a "mistake":
 
 > **\>`yell at the statue`**  
 > The statue does not understand how serious you are about this
 
-## Simple Actions with `Instead`
+It doesn't really matter if the action is an actual "mistake".  It could
+be something you want the player to do.  Using the `mistake` command 
+lets you just print out a message and tell Inform not to do anything else.
+
+## Actions without a thing: report
+
+### @TODO: 
+```inform7
+Report smelling: say "Then again, you don't have the best sense of smell. Maybe if you smell specific things it will be easier to discern a smell.".
+```
+
+## Simple actions with `instead`
 
 ---
 

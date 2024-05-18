@@ -43,18 +43,18 @@ The real world is a place, and has several places inside it.  You can have your 
 
 Things fill the real world and your world should probably have them.
 
+### [How to use verbs and actions.](actions/) 
+![30%](https://progress-bar.dev/30) 
+
+Let people unbend paperclips, ring bells, ride horses, and flip coins.
+
 ### [How to put semi-convincing people in your places.](people/) 
-![10%](https://progress-bar.dev/10)
+![20%](https://progress-bar.dev/20)
 
 ### ["When play begins:"](setup/) 
 ![20%](https://progress-bar.dev/20)
 
 How to do some fancy setup to polish your world and make it unique.
-
-### [How to use verbs and actions.](actions/) 
-![10%](https://progress-bar.dev/10) 
-
-Let people unbend paperclips, ring bells, ride horses, and flip coins.
 
 ### [Common Mistakes (and How to Fix Them)](naming/) 
 ![1%](https://progress-bar.dev/1)
