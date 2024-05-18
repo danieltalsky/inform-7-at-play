@@ -111,7 +111,7 @@ With just under 100 words of description, Inform understands all these actions a
 > You rub the creepy pewter figurine  
 
 
-## But what if you want to sing, spin, cry, dream, or any other of the roughly 100,000 verbs in the english language?
+But what if you want to sing, spin, cry, dream, or any other of the roughly 100,000 verbs in the english language?
 
 You will need to tell Inform how to handle them yourself.  Luckily Inform gives you powerful tools to do it.
 
@@ -168,7 +168,7 @@ you can [use it to let you to call a single object by multiple names](../things/
 Here we're using it in a similar way: this new name is the same as a name you already
 "understand".
 
-## Make a `mistake`
+## Make a `mistake`: a new action that just prints a message
 
 One of the easiest ways to make a totally new action work is by making it a `mistake`:
 
