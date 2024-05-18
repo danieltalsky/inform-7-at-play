@@ -117,15 +117,15 @@ You will need to tell Inform how to handle them yourself.  Luckily Inform gives 
 
 Inform leaves it to you to decide what actions are important.  It can't think of the effects of every possible action!
 
-## Piggyback onto an existing action: understand the command!
+## How to piggyback onto an existing action: understand the command!
 
 Inform already has a good assortment of actions.  You can read <a href="https://inform-7-handbook.readthedocs.io/en/latest/chapter_4_actions/built-in_actions/" target="_blank">a list of them in the official Inform 
 documentation</a>, but here are some useful ones you can grab and make your own:
 
+ - smelling
  - touching
  - turning
  - attacking
- - smelling
  - rubbing
  - looking under
 
@@ -191,6 +191,13 @@ lets you just print out a message and tell Inform not to do anything else.
 ### @TODO: 
 ```inform7
 Report smelling: say "Then again, you don't have the best sense of smell. Maybe if you smell specific things it will be easier to discern a smell.".
+```
+
+## Make a brand new action
+
+### @TODO
+```inform7
+Understand the verb "pinch" as pinching.
 ```
 
 ## Simple actions with `instead`
