@@ -114,7 +114,9 @@ There is a dry stone in the field.
 
 We can do better than that, right?  Here's how to say something else:
 
+```inform7
 The description of a thing is usually "You look at [the noun] very closely indeed, and to be completely honest, it looks about how you'd expect. You think for a moment that there might be something slightly special about it but then, upon looking just a little closer, you see that there isn't."
+```
 
 Now we get:
 
