@@ -1,0 +1,5 @@
+remote_theme: pages-themes/merlot@v0.2.0
+plugins:
+- jekyll-remote-theme
+title: Inform 7 at Play
+description: Inform 7 with illustrative examples of play
