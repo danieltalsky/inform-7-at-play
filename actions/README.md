@@ -183,12 +183,15 @@ Here you're telling it to understand a whole command as a "mistake":
 > The statue does not understand how serious you are about this
 
 It doesn't really matter if the action is an actual "mistake".  It could
-be something you want the player to do.  Using the `mistake` command 
+be something you want the player to do.  Using the `mistake` command
 lets you just print out a message and tell Inform not to do anything else.
 
 ## Actions without a thing: report
 
-### @TODO: 
+
+
+### @TODO
+
 ```inform7
 Report smelling: say "Then again, you don't have the best sense of smell. Maybe if you smell specific things it will be easier to discern a smell.".
 ```
@@ -196,6 +199,7 @@ Report smelling: say "Then again, you don't have the best sense of smell. Maybe 
 ## Make a brand new action
 
 ### @TODO
+
 ```inform7
 Understand the verb "pinch" as pinching.
 ```
@@ -205,15 +209,16 @@ Understand the verb "pinch" as pinching.
 ---
 
 ## TO DO: Reminders to myself:
+
 - Overriding the current verb set
-    - list of the current verb set
+  - list of the current verb set
 - Creating new verbs
 - "If"
 - Rulebooks: the verb lifecycle
-    - Before
-    - Instead
-    - Check
-    - Carry out
-    - After
-    - Report
+  - Before
+  - Instead
+  - Check
+  - Carry out
+  - After
+  - Report
 - Relations and state for nouns, changing state
