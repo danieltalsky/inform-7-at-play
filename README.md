@@ -35,48 +35,40 @@ practical.
 
 ### [How to make places\.](places/)
 
-![80%](https://progress-bar.dev/80)
-
 The real world is a place, and has several places inside it.  You can have your imaginary world follow the time-honored tradition of making rooms people can walk in compass directions to get to.
 
 ### [How to fill those places with things.](things/)
-
-![90%](https://progress-bar.dev/90)
 
 Things fill the real world and your world should probably have them.
 
 ### [How to use verbs and actions.](actions/)
 
-![50%](https://progress-bar.dev/50)
+(About 50% done)
 
 Let people unbend paperclips, ring bells, ride horses, and flip coins.
 
 ### [How to put semi-convincing people in your places.](people/)
 
-![20%](https://progress-bar.dev/20)
+(About 20% done)
 
 Heck is other people.
 
 ### ["When play begins:"](setup/)
 
-![80%](https://progress-bar.dev/80)
-
 How to do some fancy setup to polish your world and make it unique.
 
 ### [Common Mistakes (and How to Fix Them)](naming/)
 
-![1%](https://progress-bar.dev/1)
+(Not yet started.)
 
 Sometimes Inform doesn't understand what you're trying to tell it to do.  Here's how you can avoid or figure out some common problems.
 
 ### [Annoyingly complicated rules for naming things.](naming/)
 
-![1%](https://progress-bar.dev/1) 
+(Not yet started)
 
 Don't even bother reading this until you run into a problem with naming people, places, or things.
 
 ### [I have no idea what any of this means.](faq/)
-
-![70%](https://progress-bar.dev/70)
 
 What is Inform 7?  Who are you?  How do you do any of this?  What are you talking about?
