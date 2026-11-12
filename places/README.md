@@ -15,15 +15,21 @@ The description of The Featureless Room is
 
 Run our program and we have a world we can interact with:
 
-> **Featureless Room**  
-> You are in a room, that much you can tell.
->
->**\>look**  
-> **Featureless Room**  
-> You are in a room, that much you can tell.
->
-> **\>`walk north`**  
->You can't go that way.
+<!-- inform-transcript: featureless-room -->
+
+```text
+Featureless Room
+You are in a room, that much you can tell.
+
+>look
+Featureless Room
+You are in a room, that much you can tell.
+
+>walk north
+You can't go that way.
+```
+
+<!-- /inform-transcript: featureless-room -->
 
 See, so we just created a whole (very small) world with just three lines of English language text.  We say something `is a room` and Inform knows it's a place.  We give it a description, and Inform knows that's how to describe the room.
 

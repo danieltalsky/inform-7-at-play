@@ -1,9 +1,14 @@
 """Contract tests for example selection and console transcript framing."""
 
+import contextlib
+import io
+from pathlib import Path
+import tempfile
 import unittest
 from unittest.mock import patch
 
-from run import MARKER, extract_source, format_transcript, verify_compilers
+from run import (MARKER, extract_source, format_transcript, update_chapter_transcript,
+                 verify_compilers, write_or_check)
 from setup_linux import debian_payload
 
 
@@ -51,6 +56,44 @@ class CompilerTests(unittest.TestCase):
         with patch("run.compiler_version", return_value="99.0"):
             with self.assertRaisesRegex(RuntimeError, "compiler upgrades require"):
                 verify_compilers("inform7", "inform6")
+
+
+class ChapterTests(unittest.TestCase):
+    start = "<!-- inform-transcript: room -->"
+    end = "<!-- /inform-transcript: room -->"
+    transcript = ("A room\nAn Interactive Fiction\n"
+                  "Release 1 / Serial number 160428 / Inform 7 v10.1.2 / D\n\n"
+                  "Featureless Room\nA room description.\n\n>look\nA room description.\n")
+
+    def test_updates_only_selected_region_and_is_idempotent(self):
+        document = "Intro\n" + self.start + "\nOld play\n" + self.end + "\nExplanation\n"
+        updated = update_chapter_transcript(document, "room", self.transcript)
+        self.assertTrue(updated.startswith("Intro\n" + self.start))
+        self.assertTrue(updated.endswith(self.end + "\nExplanation\n"))
+        self.assertIn("```text\nFeatureless Room\n", updated)
+        self.assertNotIn("Release 1", updated)
+        self.assertNotIn("Old play", updated)
+        self.assertEqual(update_chapter_transcript(updated, "room", self.transcript), updated)
+
+    def test_missing_duplicate_or_reversed_markers_fail(self):
+        for document in (self.start, self.start + self.start + self.end,
+                         self.end + self.start):
+            with self.subTest(document=document), self.assertRaises(ValueError):
+                update_chapter_transcript(document, "room", self.transcript)
+
+    def test_unrecognized_banner_is_not_silently_removed(self):
+        with self.assertRaisesRegex(ValueError, "banner"):
+            update_chapter_transcript(self.start + self.end, "room", "Actual gameplay\n")
+
+    def test_check_reports_drift_without_writing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            chapter = root / "chapter.md"
+            chapter.write_text("Old play\n", encoding="utf-8")
+            with patch("run.ROOT", root), contextlib.redirect_stdout(io.StringIO()) as output:
+                self.assertFalse(write_or_check(chapter, "New play\n", True))
+            self.assertIn("checked-in/chapter.md", output.getvalue())
+            self.assertEqual(chapter.read_text(encoding="utf-8"), "Old play\n")
 
 
 class LinuxPackageTests(unittest.TestCase):

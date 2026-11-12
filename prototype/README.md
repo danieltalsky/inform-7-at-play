@@ -35,9 +35,11 @@ uv run --project . python prototype/run.py --check
 uv run --project . python -m unittest discover -s prototype -p test_runner.py
 ```
 
-The first command updates [generated.md](generated.md). The second independently
-compiles and plays all examples, checks expected response fragments, and fails if
-the page differs. Review generated diffs before accepting intentional changes.
+The first command updates [generated.md](generated.md) and the selected transcript
+region in the opening section of [Making Places](../places/README.md). The second
+independently compiles and plays all examples, checks expected response fragments,
+and fails if either output differs, without editing files. Review generated diffs
+before accepting intentional changes.
 
 Compiler errors, interpreter errors, timeouts, missing responses, and unexpected
 input boundaries fail the run. Compiler logs, instrumented source, compiled stories,
@@ -61,8 +63,19 @@ The Beautiful Breezeway is a room.
 [examples.json](examples.json) maps each ID to a document, story title, command
 sequence, and expected response fragments. The runner rejects missing or repeated
 tags for a selected ID. Inserting or moving unrelated code blocks doesn't change
-the selection. Existing chapters have only gained these invisible comments; their
-source and handwritten transcripts are otherwise unchanged.
+the selection.
+
+The opening room example in Making Places also sets `"chapter_transcript": true`.
+Its output lives between `<!-- inform-transcript: featureless-room -->` and
+`<!-- /inform-transcript: featureless-room -->` comments. The runner replaces only
+the content between those markers, keeping the surrounding prose and source.
+Chapter output omits the compiler banner and uses a plain-text fence so prompts
+and story text display literally. The full banner remains in `generated.md`.
+
+To edit this example, change its Inform source in the chapter or its commands in
+`examples.json`, run the generator, and review both the chapter and proof-page
+diffs. Don't hand-edit the generated region: CI detects changes to it. The rest
+of the chapters still have their original handwritten transcripts.
 
 ## Capture contract
 
@@ -154,6 +167,5 @@ uv run --locked --project . python prototype/run.py \
   --check
 ```
 
-The next authoring step is integrating generated output into one chapter. The
-separate generated page lets us evaluate the pipeline before replacing the
-chapters' handwritten transcripts.
+The opening Making Places example is the first chapter integration. Evaluate that
+editing workflow before selecting additional transcript regions for conversion.

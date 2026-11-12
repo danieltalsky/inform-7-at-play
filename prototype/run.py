@@ -112,6 +112,41 @@ def play(interpreter, story, commands):
     return format_transcript(raw, commands)
 
 
+def update_chapter_transcript(document, example_id, transcript):
+    """Replace one explicitly delimited chapter region, preserving its surroundings."""
+    start = f"<!-- inform-transcript: {example_id} -->"
+    end = f"<!-- /inform-transcript: {example_id} -->"
+    if document.count(start) != 1 or document.count(end) != 1:
+        raise ValueError(f"Expected exactly one pair of transcript markers for {example_id}")
+    before, _, remaining = document.partition(start)
+    _, separator, after = remaining.partition(end)
+    if not separator or end in before:
+        raise ValueError(f"Transcript markers are out of order for {example_id}")
+    # Keep the teaching example focused on play; the full banner remains in generated.md.
+    banner = (r"\A[^\n]+\nAn Interactive Fiction\n"
+              r"Release [^\n]+ / Inform 7 v[^\n]+\n\n")
+    gameplay, count = re.subn(banner, "", transcript, count=1)
+    if count != 1:
+        raise ValueError(f"Unrecognized story banner for {example_id}; refusing to trim it")
+    region = f"\n\n```text\n{gameplay.rstrip()}\n```\n\n"
+    return before + start + region + end + after
+
+
+def write_or_check(target, rendered, check):
+    previous = target.read_text(encoding="utf-8") if target.exists() else ""
+    if check:
+        if previous == rendered:
+            return True
+        name = target.relative_to(ROOT).as_posix()
+        print("".join(difflib.unified_diff(previous.splitlines(True), rendered.splitlines(True),
+                                          fromfile=f"checked-in/{name}", tofile=f"generated/{name}")))
+        return False
+    if previous != rendered:
+        target.write_text(rendered, encoding="utf-8", newline="\n")
+        print(f"Wrote {target}")
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--inform", type=Path,
@@ -146,8 +181,12 @@ def main():
                 "responses come from compiled stories running in console Glulxe with CheapGlk. "
                 "The runner echoes submitted commands and removes its input-boundary markers. "
                 "Compiler versions, random seed, and build date are fixed.\n"]
+    chapters = {}
     for example in examples:
-        document = (ROOT / example["document"]).read_text(encoding="utf-8")
+        path = ROOT / example["document"]
+        document = chapters.get(path)
+        if document is None:
+            document = path.read_text(encoding="utf-8")
         source = extract_source(document, example["id"])
         display_source = "\n".join(line.rstrip() for line in source.splitlines())
         work = PROTOTYPE / "build" / example["id"]
@@ -157,23 +196,21 @@ def main():
         for expected in example["expect"]:
             if expected not in transcript:
                 raise RuntimeError(f'{example["id"]}: missing expected output {expected!r}')
+        if example.get("chapter_transcript", False):
+            chapters[path] = update_chapter_transcript(document, example["id"], transcript)
         sections.append(f'\n## {example["title"]}\n\n'
                         f'Source: [{example["document"]}](../{example["document"]})\n\n'
                         f'```inform7\n{display_source}\n```\n\n'
                         f'```text\n{transcript}```\n')
         print(f'PASS {example["id"]}: compiled and played {len(example["commands"])} commands')
     rendered = "".join(sections)
-    target = PROTOTYPE / "generated.md"
+    outputs = {PROTOTYPE / "generated.md": rendered, **chapters}
+    # Finish every compile and render before writing any documentation.
+    matches = [write_or_check(target, content, args.check) for target, content in outputs.items()]
     if args.check:
-        previous = target.read_text(encoding="utf-8") if target.exists() else ""
-        if previous != rendered:
-            print("".join(difflib.unified_diff(previous.splitlines(True), rendered.splitlines(True),
-                                               fromfile="checked-in", tofile="generated")))
+        if not all(matches):
             raise RuntimeError("Generated documentation differs; run without --check to update")
         print("Generated documentation is up to date")
-    else:
-        target.write_text(rendered, encoding="utf-8", newline="\n")
-        print(f"Wrote {target}")
 
 
 if __name__ == "__main__":

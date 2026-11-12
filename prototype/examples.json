@@ -10,6 +10,7 @@
     "id": "featureless-room",
     "title": "A room with no exits",
     "document": "places/README.md",
+    "chapter_transcript": true,
     "commands": ["look", "walk north"],
     "expect": ["You are in a room, that much you can tell.", "You can't go that way."]
   },
