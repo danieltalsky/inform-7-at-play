@@ -4,6 +4,7 @@
 
 Build rich worlds using natural language, as easy as:
 
+<!-- inform-example: breezeway -->
 ```inform7
 The Beautiful Breezeway is a room.  
 

@@ -6,6 +6,7 @@ People walk around in places in the real world.  The best way to help people fee
 
 Let's make a room.  It's easy.
 
+<!-- inform-example: featureless-room -->
 ```inform7
 The Featureless Room is a room.
 The description of The Featureless Room is 
@@ -71,6 +72,7 @@ Inform has the idea of compass directions built in.  It knows north and south an
 
 You can do this to give two rooms a relationship with each other:
 
+<!-- inform-example: north-and-south -->
 ```inform7
 The Northern Tip of the Island is a room.
 The description is "A very rocky place.".

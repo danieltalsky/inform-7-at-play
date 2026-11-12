@@ -1,0 +1,23 @@
+[
+  {
+    "id": "breezeway",
+    "title": "An edible apple",
+    "document": "README.md",
+    "commands": ["eat apple", "inventory"],
+    "expect": ["(first taking the shiny apple)", "You eat the shiny apple. Not bad.", "You are carrying nothing."]
+  },
+  {
+    "id": "featureless-room",
+    "title": "A room with no exits",
+    "document": "places/README.md",
+    "commands": ["look", "walk north"],
+    "expect": ["You are in a room, that much you can tell.", "You can't go that way."]
+  },
+  {
+    "id": "north-and-south",
+    "title": "Moving between rooms",
+    "document": "places/README.md",
+    "commands": ["north", "south", "north"],
+    "expect": ["You can't go that way.", "Southern Tip of the Island", "A very sandy place.", "A very rocky place."]
+  }
+]

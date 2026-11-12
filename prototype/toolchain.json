@@ -1,0 +1,18 @@
+{
+  "inform_version": "10.1.2",
+  "inform6_version": "6.41",
+  "linux_package": {
+    "url": "https://github.com/ganelson/inform/releases/download/v10.1.2/inform7-ide_2.0.0-1_amd64.deb",
+    "sha256": "2a238e3d2da7b583334cc2cfa4fd88eda6d44b83d8ba8117c0664e0740b6ac40"
+  },
+  "sources": {
+    "glulxe": {
+      "commit": "56ab8743bab565de307bd892c555d8d8897ed517",
+      "sha256": "f1dcb430fafd451f68b14e62d55c26cf4fd35c49f09ed2b8a0bf0d3544d59e5d"
+    },
+    "cheapglk": {
+      "commit": "14d8aaf6e4150669762bd4646a5368e75c1eeee6",
+      "sha256": "dbf925ef2ae208c8c44d857f73107d8fc3e30325b2fd17180a903438557a085a"
+    }
+  }
+}
