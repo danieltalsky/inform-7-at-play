@@ -1,0 +1,38 @@
+{
+  "name": "inform-markdown",
+  "displayName": "Inform Markdown",
+  "description": "Inform 7 syntax highlighting inside Markdown fences, using Inform Ecosystem's grammar.",
+  "version": "0.1.0",
+  "publisher": "inform-at-play",
+  "license": "MIT",
+  "engines": { "vscode": "^1.98.0" },
+  "categories": ["Programming Languages"],
+  "keywords": ["inform7", "markdown", "syntax highlighting"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danieltalsky/inform-7-at-play.git",
+    "directory": "tools/vscode-inform-markdown"
+  },
+  "extensionDependencies": ["jeffnyman.inform-ecosystem-vscode"],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "markdown.inform7.injection",
+        "path": "./syntaxes/inform7-markdown.tmLanguage.json",
+        "injectTo": ["text.html.markdown"],
+        "embeddedLanguages": {
+          "meta.embedded.block.inform7": "inform7",
+          "meta.embedded.inform6": "inform6",
+          "meta.embedded.preform": "preform",
+          "meta.embedded.js": "javascript"
+        },
+        "tokenTypes": { "meta.embedded.block.inform7": "other" }
+      }
+    ]
+  },
+  "scripts": { "test": "node test/highlighting.cjs" },
+  "devDependencies": {
+    "vscode-textmate": "9.3.2",
+    "vscode-oniguruma": "2.0.1"
+  }
+}
