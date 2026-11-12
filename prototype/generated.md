@@ -20,23 +20,28 @@ There is a shiny apple in the Beautiful Breezeway.
 It is edible.
 ```
 
-```text
-An edible apple
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">2 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">An edible apple
 An Interactive Fiction
 Release 1 / Serial number 160428 / Inform 7 v10.1.2 / D
 
 Beautiful Breezeway
-This is the fanciest breezeway you've ever been in. It's just a place to take off your boots, but the coat hooks are made of filigreed platinum and the shoehorns are made of solid gold, which hardly seems practical.
+This is the fanciest breezeway you&#x27;ve ever been in. It&#x27;s just a place to take off your boots, but the coat hooks are made of filigreed platinum and the shoehorns are made of solid gold, which hardly seems practical.
 
-You can see a shiny apple here.
-
->eat apple
-(first taking the shiny apple)
-You eat the shiny apple. Not bad.
-
->inventory
-You are carrying nothing.
-```
+You can see a shiny apple here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">eat apple</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the shiny apple)
+You eat the shiny apple. Not bad.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying nothing.</samp></pre>
+</div>
+</div>
+</figure>
 
 ## A room with no exits
 
@@ -48,21 +53,26 @@ The description of The Featureless Room is
 "You are in a room, that much you can tell.".
 ```
 
-```text
-A room with no exits
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">2 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A room with no exits
 An Interactive Fiction
 Release 1 / Serial number 160428 / Inform 7 v10.1.2 / D
 
 Featureless Room
-You are in a room, that much you can tell.
-
->look
-Featureless Room
-You are in a room, that much you can tell.
-
->walk north
-You can't go that way.
-```
+You are in a room, that much you can tell.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Featureless Room
+You are in a room, that much you can tell.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">walk north</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You can&#x27;t go that way.</samp></pre>
+</div>
+</div>
+</figure>
 
 ## Moving between rooms
 
@@ -77,22 +87,28 @@ The description is "A very sandy place.".
 The Southern Tip is south of The Northern Tip.
 ```
 
-```text
-Moving between rooms
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">3 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Moving between rooms
 An Interactive Fiction
 Release 1 / Serial number 160428 / Inform 7 v10.1.2 / D
 
 Northern Tip of the Island
-A very rocky place.
-
->north
-You can't go that way.
-
->south
-Southern Tip of the Island
-A very sandy place.
-
->north
-Northern Tip of the Island
-A very rocky place.
-```
+A very rocky place.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">north</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You can&#x27;t go that way.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">south</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Southern Tip of the Island
+A very sandy place.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">north</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Northern Tip of the Island
+A very rocky place.</samp></pre>
+</div>
+</div>
+</figure>

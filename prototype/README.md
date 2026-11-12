@@ -25,7 +25,7 @@ the pins. The archives retain the upstream MIT license files.
 
 The first setup downloads roughly 90 MB for the compiler. Subsequent interpreter
 builds reuse the downloaded archives and compiler cache. Normal transcript runs
-use only the Python standard library and the already-built executables.
+use the already-built executables and the locked Jinja dependency for HTML rendering.
 
 ## Generate and check
 
@@ -69,13 +69,38 @@ The opening room example in Making Places also sets `"chapter_transcript": true`
 Its output lives between `<!-- inform-transcript: featureless-room -->` and
 `<!-- /inform-transcript: featureless-room -->` comments. The runner replaces only
 the content between those markers, keeping the surrounding prose and source.
-Chapter output omits the compiler banner and uses a plain-text fence so prompts
-and story text display literally. The full banner remains in `generated.md`.
+Chapter output omits the compiler banner and uses a styled HTML terminal panel.
+The full banner remains in `generated.md`.
 
 To edit this example, change its Inform source in the chapter or its commands in
 `examples.json`, run the generator, and review both the chapter and proof-page
 diffs. Don't hand-edit the generated region: CI detects changes to it. The rest
 of the chapters still have their original handwritten transcripts.
+
+## Terminal presentation
+
+[templates/terminal.html](templates/terminal.html) is the shared Jinja template for
+the chapter transcript and the proof page. All styles are inline so it works in
+the existing Jekyll site and VS Code's Markdown preview without a separate stylesheet
+or runtime JavaScript. GitHub's own Markdown renderer may strip the inline styles.
+
+Commands and responses are kept as separate data from the interpreter's input
+boundaries. The renderer never guesses whether story text containing `>` is a
+command. Commands use semantic `kbd` elements, responses use `samp`, and both
+wrap on narrow screens. Text is escaped for HTML and braces are encoded to keep
+Jekyll's Liquid processor from interpreting literal story text as template code.
+The Jinja source directory is excluded from Jekyll processing.
+
+Plain-text transcripts still live under `prototype/build/EXAMPLE_ID/transcript.txt`.
+Styling changes don't alter the gameplay checks or those text exports. To preview
+the current output after running the generator:
+
+```powershell
+uv run --project . python prototype/preview.py
+```
+
+Open `prototype/build/terminal-preview.html` in a browser. Edit the Jinja template
+to adjust presentation, then regenerate the documentation with the usual command.
 
 ## Capture contract
 

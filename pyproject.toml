@@ -2,7 +2,9 @@
 name = "inform-7-at-play"
 version = "0.1.0"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "jinja2==3.1.6",
+]
 
 [dependency-groups]
 build = [

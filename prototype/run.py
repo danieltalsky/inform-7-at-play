@@ -9,6 +9,8 @@ import re
 import subprocess
 import sys
 
+from terminal import Transcript, Turn, render_terminal
+
 ROOT = Path(__file__).resolve().parent.parent
 PROTOTYPE = ROOT / "prototype"
 MARKER = "__I7_AT_PLAY_INPUT_READY__"
@@ -71,7 +73,7 @@ def compile_story(inform7, inform6, internal, work, source):
     return output
 
 
-def format_transcript(raw, commands):
+def parse_console_output(raw, commands):
     """Remove explicit harness boundaries and echo piped commands.
 
     CheapGlk does not echo stdin. A small Inform rule emits a boundary before
@@ -84,15 +86,20 @@ def format_transcript(raw, commands):
         raise RuntimeError("Unexpected input boundaries: story ended early or requested extra input")
     if not re.fullmatch(r"\s*>\s*<end of input>\s*", chunks[-1]):
         raise RuntimeError("Unexpected console EOF trailer; unsupported interaction or interpreter version")
-    transcript = chunks[0].strip()
+    turns = []
     for command, chunk in zip(commands, chunks[1:-1]):
         chunk = chunk.lstrip("\n")
         if not chunk.startswith(">"):
             raise RuntimeError("Expected the standard Inform command prompt after a harness boundary")
-        transcript += f"\n\n>{command}\n" + chunk[1:].strip()
-    if "*** Run-time problem" in transcript or "Glulxe fatal error" in raw:
+        turns.append(Turn(command, chunk[1:].strip()))
+    if "*** Run-time problem" in raw or "Glulxe fatal error" in raw:
         raise RuntimeError("Interpreter reported a runtime error")
-    return transcript.rstrip() + "\n"
+    return Transcript(chunks[0].strip(), tuple(turns))
+
+
+def format_transcript(raw, commands):
+    """Keep the plain-text export used for cross-platform comparison."""
+    return parse_console_output(raw, commands).text
 
 
 def play(interpreter, story, commands):
@@ -109,7 +116,7 @@ def play(interpreter, story, commands):
     stderr = result.stderr.decode("utf-8", errors="replace")
     if result.returncode or stderr:
         raise RuntimeError(f"Console interpreter failed ({result.returncode}):\n{stderr}\n{raw}")
-    return format_transcript(raw, commands)
+    return parse_console_output(raw, commands)
 
 
 def update_chapter_transcript(document, example_id, transcript):
@@ -123,12 +130,7 @@ def update_chapter_transcript(document, example_id, transcript):
     if not separator or end in before:
         raise ValueError(f"Transcript markers are out of order for {example_id}")
     # Keep the teaching example focused on play; the full banner remains in generated.md.
-    banner = (r"\A[^\n]+\nAn Interactive Fiction\n"
-              r"Release [^\n]+ / Inform 7 v[^\n]+\n\n")
-    gameplay, count = re.subn(banner, "", transcript, count=1)
-    if count != 1:
-        raise ValueError(f"Unrecognized story banner for {example_id}; refusing to trim it")
-    region = f"\n\n```text\n{gameplay.rstrip()}\n```\n\n"
+    region = "\n\n" + render_terminal(transcript.without_banner()) + "\n"
     return before + start + region + end + after
 
 
@@ -192,16 +194,16 @@ def main():
         work = PROTOTYPE / "build" / example["id"]
         story = compile_story(inform7, inform6, internal, work, f'"{example["title"]}"\n\n{source}\n')
         transcript = play(interpreter, story, example["commands"])
-        (work / "transcript.txt").write_text(transcript, encoding="utf-8")
+        (work / "transcript.txt").write_text(transcript.text, encoding="utf-8")
         for expected in example["expect"]:
-            if expected not in transcript:
+            if expected not in transcript.text:
                 raise RuntimeError(f'{example["id"]}: missing expected output {expected!r}')
         if example.get("chapter_transcript", False):
             chapters[path] = update_chapter_transcript(document, example["id"], transcript)
         sections.append(f'\n## {example["title"]}\n\n'
                         f'Source: [{example["document"]}](../{example["document"]})\n\n'
                         f'```inform7\n{display_source}\n```\n\n'
-                        f'```text\n{transcript}```\n')
+                        + render_terminal(transcript))
         print(f'PASS {example["id"]}: compiled and played {len(example["commands"])} commands')
     rendered = "".join(sections)
     outputs = {PROTOTYPE / "generated.md": rendered, **chapters}

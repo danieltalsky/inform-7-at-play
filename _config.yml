@@ -3,3 +3,5 @@ plugins:
 - jekyll-remote-theme
 title: Inform 7 at Play
 description: Inform 7 with illustrative examples of play
+exclude:
+- prototype/templates

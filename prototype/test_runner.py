@@ -2,6 +2,7 @@
 
 import contextlib
 import io
+from html.parser import HTMLParser
 from pathlib import Path
 import tempfile
 import unittest
@@ -10,6 +11,7 @@ from unittest.mock import patch
 from run import (MARKER, extract_source, format_transcript, update_chapter_transcript,
                  verify_compilers, write_or_check)
 from setup_linux import debian_payload
+from terminal import Transcript, Turn, render_terminal
 
 
 class SourceTests(unittest.TestCase):
@@ -61,16 +63,19 @@ class CompilerTests(unittest.TestCase):
 class ChapterTests(unittest.TestCase):
     start = "<!-- inform-transcript: room -->"
     end = "<!-- /inform-transcript: room -->"
-    transcript = ("A room\nAn Interactive Fiction\n"
-                  "Release 1 / Serial number 160428 / Inform 7 v10.1.2 / D\n\n"
-                  "Featureless Room\nA room description.\n\n>look\nA room description.\n")
+    transcript = Transcript(
+        "A room\nAn Interactive Fiction\n"
+        "Release 1 / Serial number 160428 / Inform 7 v10.1.2 / D\n\n"
+        "Featureless Room\nA room description.",
+        (Turn("look", "A room description."),))
 
     def test_updates_only_selected_region_and_is_idempotent(self):
         document = "Intro\n" + self.start + "\nOld play\n" + self.end + "\nExplanation\n"
         updated = update_chapter_transcript(document, "room", self.transcript)
         self.assertTrue(updated.startswith("Intro\n" + self.start))
         self.assertTrue(updated.endswith(self.end + "\nExplanation\n"))
-        self.assertIn("```text\nFeatureless Room\n", updated)
+        self.assertIn('<figure class="if-terminal"', updated)
+        self.assertIn("Featureless Room\n", updated)
         self.assertNotIn("Release 1", updated)
         self.assertNotIn("Old play", updated)
         self.assertEqual(update_chapter_transcript(updated, "room", self.transcript), updated)
@@ -83,7 +88,7 @@ class ChapterTests(unittest.TestCase):
 
     def test_unrecognized_banner_is_not_silently_removed(self):
         with self.assertRaisesRegex(ValueError, "banner"):
-            update_chapter_transcript(self.start + self.end, "room", "Actual gameplay\n")
+            update_chapter_transcript(self.start + self.end, "room", Transcript("Actual gameplay", ()))
 
     def test_check_reports_drift_without_writing(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -94,6 +99,60 @@ class ChapterTests(unittest.TestCase):
                 self.assertFalse(write_or_check(chapter, "New play\n", True))
             self.assertIn("checked-in/chapter.md", output.getvalue())
             self.assertEqual(chapter.read_text(encoding="utf-8"), "Old play\n")
+
+
+class TerminalContent(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.outputs = []
+        self.commands = []
+        self.tags = []
+        self.active = None
+
+    def handle_starttag(self, tag, attrs):
+        self.tags.append(tag)
+        if tag in ("samp", "kbd"):
+            self.active = []
+
+    def handle_data(self, data):
+        if self.active is not None:
+            self.active.append(data)
+
+    def handle_endtag(self, tag):
+        if tag in ("samp", "kbd"):
+            (self.outputs if tag == "samp" else self.commands).append("".join(self.active))
+            self.active = None
+
+
+class TerminalTests(unittest.TestCase):
+    def test_html_preserves_output_and_command_text(self):
+        game = Transcript("A café\n  With indentation.", (
+            Turn("look", "A description.\n\nAnother paragraph."),
+            Turn("say hello", ">This is story output, not a command.")))
+        parser = TerminalContent()
+        parser.feed(render_terminal(game))
+        self.assertEqual(parser.commands, ["look", "say hello"])
+        self.assertEqual(parser.outputs, [game.initial, *(turn.response for turn in game.turns)])
+
+    def test_html_and_liquid_syntax_remain_literal_text(self):
+        text = '<script>alert("hello")</script> & {{ name }} {% include secret %}'
+        game = Transcript(text, (Turn('<look & "listen">', text),))
+        rendered = render_terminal(game)
+        parser = TerminalContent()
+        parser.feed(rendered)
+        self.assertNotIn("script", parser.tags)
+        self.assertNotIn("{{", rendered)
+        self.assertNotIn("{%", rendered)
+        self.assertEqual(parser.outputs, [text, text])
+        self.assertEqual(parser.commands, ['<look & "listen">'])
+
+    def test_banner_trimming_does_not_modify_plain_text(self):
+        game = ChapterTests.transcript
+        trimmed = game.without_banner()
+        self.assertIn("Release 1", game.text)
+        self.assertNotIn("Release 1", trimmed.text)
+        self.assertEqual(trimmed.turns, game.turns)
+        self.assertTrue(trimmed.initial.startswith("Featureless Room"))
 
 
 class LinuxPackageTests(unittest.TestCase):
