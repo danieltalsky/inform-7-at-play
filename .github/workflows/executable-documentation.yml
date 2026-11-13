@@ -9,12 +9,13 @@ permissions:
   contents: read
 
 jobs:
-  linux:
+  build-and-verify:
+    name: Build and verify documentation
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           version: '0.13.3'
           python-version: '3.13'
@@ -48,15 +49,22 @@ jobs:
       - name: Render all-sample preview
         run: uv run --locked --project . python prototype/preview.py
       - name: Save deployable site
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: static-site
           path: dist/
           if-no-files-found: error
           retention-days: 7
+      - name: Download deployment artifact for verification
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: static-site
+          path: prototype/build/site-artifact
+      - name: Verify deployment artifact matches the build
+        run: diff --recursive dist prototype/build/site-artifact
       - name: Save diagnostic logs and transcripts
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: executable-documentation-diagnostics
           if-no-files-found: ignore
@@ -73,7 +81,7 @@ jobs:
 
   deploy:
     name: Deploy via FTPS
-    needs: linux
+    needs: build-and-verify
     if: >-
       github.ref == 'refs/heads/maestra' &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
@@ -84,7 +92,7 @@ jobs:
       group: ftps-production
       cancel-in-progress: false
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - name: Check this is still the latest maestra revision
@@ -97,7 +105,7 @@ jobs:
           else
             echo 'Skipping deployment of a superseded revision.'
           fi
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         if: steps.latest.outputs.current == 'true'
         with:
           name: static-site
