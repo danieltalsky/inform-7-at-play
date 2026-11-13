@@ -37,6 +37,19 @@ overwrites its own files and copies theme assets; it does not delete the output
 directory. Use a new output directory when changing theme asset names to avoid
 carrying old, unused files into a deployment.
 
+## Favicons
+
+The `at-play` theme includes a charcoal prompt and red dot on cream, in SVG,
+multi-size ICO, 16/32/48/256px PNG, and 180px Apple touch-icon formats. Every page
+links to these assets using relative URLs. To regenerate the set on Windows:
+
+```powershell
+./tools/generate_favicons.ps1
+```
+
+The generator draws the vector and raster versions from the same geometry;
+normal site builds copy the checked-in assets without extra dependencies.
+
 ## Editorial TODOs
 
 Use the exact marker `@TODO` followed by a note, in its own paragraph:
