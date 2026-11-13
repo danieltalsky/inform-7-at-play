@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inform 7 with illustrative examples of play">
+  <title>{{ title }} · Inform 7 at Play</title>
+  <link rel="stylesheet" href="{{ assets }}style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><a class="wordmark" href="{{ home }}" aria-label="Inform 7 at Play home">Inform 7 <span>at Play</span></a></header>
+<div class="layout">
+  <nav class="sidebar" aria-label="Chapters">
+  {% for item in nav %}
+    <a class="{{ 'chapter' if item.verb else 'utility' }}" href="{{ item.href }}"{% if item.active %} aria-current="page"{% endif %}>{% if item.verb %}<em>{{ item.verb }}</em><strong>{{ item.label }}</strong>{% else %}{{ item.label }}{% endif %}</a>
+  {% endfor %}
+  </nav>
+  <main id="main">
+    <article><h1>{{ title }}</h1>{{ content|safe }}</article>
+    <nav class="page-turn" aria-label="Previous and next chapter">
+    {% if previous %}<a href="{{ previous.href }}">← {{ previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if following %}<a href="{{ following.href }}">{{ following.title }} →</a>{% endif %}
+    </nav>
+  </main>
+</div>
+</body>
+</html>

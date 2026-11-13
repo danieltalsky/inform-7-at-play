@@ -22,6 +22,10 @@ jobs:
           cache-dependency-glob: uv.lock
       - name: Install locked project dependencies
         run: uv sync --locked --group build
+      - name: Test static site export
+        run: uv run --locked --project . python -m unittest test_site_builder
+      - name: Build static site
+        run: uv run --locked --project . python site_builder.py
       - name: Extract pinned Linux compilers
         run: uv run --locked --project . python prototype/setup_linux.py
       - name: Build pinned console interpreter
