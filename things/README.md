@@ -1,4 +1,4 @@
-# Inform 7: All About Things
+# All About Things
 
 Your imaginary worlds in Inform 7 are almost inevitably going to have things in them.  The real world has things, and people expect them.  Let's not disappoint them.  
 

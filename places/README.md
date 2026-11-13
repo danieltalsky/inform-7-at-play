@@ -1,4 +1,4 @@
-# Inform 7: Making Places
+# Making Places
 
 People walk around in places in the real world.  The best way to help people feel like they're in a real world is to have some places for them to hang out in, walk around in, and look at.
 

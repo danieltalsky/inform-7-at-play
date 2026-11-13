@@ -50,7 +50,7 @@ or set `INFORM_HOME` for another installation location.
 
 ## Complete sample catalog
 
-All 66 Inform source fences across the chapters have a stable ID and a hidden
+All Inform source fences across the chapters have a stable ID and a hidden
 metadata comment immediately above the code. Code, commands, expected responses,
 and composition are edited together in the chapter. There is no separate JSON
 catalog to maintain. JSON is generated output only.

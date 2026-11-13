@@ -72,9 +72,7 @@ Sometimes Inform doesn't understand what you're trying to tell it to do.  Here's
 
 ### [Annoyingly complicated rules for naming things.](naming/)
 
-@TODO Write the naming examples and explanations.
-
-Don't even bother reading this until you run into a problem with naming people, places, or things.
+Names, synonyms, articles, book titles, and what to do when Inform reads a name as an instruction. Start with the everyday rules, or look up the particular naming problem you've run into.
 
 ### [Getting Started](getting-started/)
 
