@@ -5,6 +5,12 @@
 `maestra` is this repository's main/default branch. References to "main" mean
 `maestra`; do not create or rename a branch to `main`.
 
+## Change workflow
+
+The initial deployment setup may be committed directly to `maestra`. Once
+deployment is in place, use feature branches and pull requests targeting
+`maestra` for subsequent changes; do not push directly unless explicitly asked.
+
 ## Inform 7 reference
 
 Before answering Inform questions or editing Inform examples, read

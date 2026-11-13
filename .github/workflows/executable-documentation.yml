@@ -26,6 +26,12 @@ jobs:
         run: uv run --locked --project . python -m unittest test_site_builder
       - name: Build static site
         run: uv run --locked --project . python site_builder.py
+      - name: Validate deployment scripts and mirror behavior
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lftp shellcheck
+          shellcheck deploy/*.sh
+          bash deploy/test_mirror.sh
       - name: Extract pinned Linux compilers
         run: uv run --locked --project . python prototype/setup_linux.py
       - name: Build pinned console interpreter
@@ -41,6 +47,13 @@ jobs:
           --check
       - name: Render all-sample preview
         run: uv run --locked --project . python prototype/preview.py
+      - name: Save deployable site
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: static-site
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
       - name: Save diagnostic logs and transcripts
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -57,3 +70,48 @@ jobs:
             prototype/build/*/example.json
             prototype/build/examples.json
             prototype/build/terminal-preview.html
+
+  deploy:
+    name: Deploy via FTPS
+    needs: linux
+    if: >-
+      github.ref == 'refs/heads/maestra' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      vars.DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: ftps-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check this is still the latest maestra revision
+        id: latest
+        shell: bash
+        run: |
+          latest=$(git ls-remote origin refs/heads/maestra | cut -f1)
+          if [[ "$latest" == "$GITHUB_SHA" ]]; then
+            echo 'current=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Skipping deployment of a superseded revision.'
+          fi
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        if: steps.latest.outputs.current == 'true'
+        with:
+          name: static-site
+          path: dist
+      - name: Install FTPS client
+        if: steps.latest.outputs.current == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lftp
+      - name: Replace the site's public files
+        if: steps.latest.outputs.current == 'true'
+        env:
+          FTP_HOST: ${{ vars.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ vars.FTP_PORT }}
+        run: bash deploy/ftp.sh

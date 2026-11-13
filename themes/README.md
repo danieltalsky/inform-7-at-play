@@ -14,6 +14,7 @@ uv run --project . python -m http.server 8000 --directory dist --bind 127.0.0.1
 
 Upload the contents of `dist` to the subdomain's document root. No Python or
 Jinja installation is needed on the web server. Links also work in a subfolder.
+For automatic deployment from `maestra`, see [FTPS setup](../deploy/README.md).
 The body copy and examples come from the chapter Markdown, in their original
 order. Existing handwritten transcripts are preserved; this export does not
 compile or regenerate gameplay. The wordmark currently loads Literata from
