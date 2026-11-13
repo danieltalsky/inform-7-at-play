@@ -4,7 +4,7 @@
 
 **Inform is a programming language** that looks like the English language, and lets you make interactive stories.
 
-### How do you interact with them?
+### How do you interact with stories?
 
 You pretend to tell the main character (you) what to do.
 
@@ -51,9 +51,13 @@ There's a program (also alled Inform) that you can install on a Windows, Mac, or
 
 Download the latest app for your computer: [Windows](https://github.com/DavidKinder/Windows-Inform7/releases/latest), [Mac](https://github.com/TobyLobster/Inform/releases/latest), or [Linux](https://flathub.org/en/apps/com.inform7.IDE). Open the downloaded file and follow the installation steps for your system.
 
-Installation is a little different on each computer, and this guide is about writing stories, not installing software. For a gentle introduction, start with the official [*Writing with Inform* guide](https://ganelson.github.io/inform-website/book/WI_1_1.html), also included in the app. 
+Installation is a little different on each computer, and this guide is about writing stories, not installing software. for more detailed and official instructions, start with the official [*Writing with Inform* guide](https://ganelson.github.io/inform-website/book/WI_1_1.html), also included in the app once you install it.
 
-Then, start with this book's guide to [making places](../places/README.md).
+### Do you want to get started learning how to make these worlds?
+
+If you do let's start with this book's guide to [making places](../places/README.md).
+
+If you still have more frequently asked questions, keep reading!
 
 ### How did this kind of thing start?
 
@@ -68,7 +72,6 @@ Yeah!  The most successful game (Zork) by the most successful company (Infocom) 
 ### Do people still make them?
 
 People still make these kinds of games but now mostly call them Interactive Fiction.  It works the same though: you and the computer talk to each other using a written language.
-
 
 ### Are there pictures?
 

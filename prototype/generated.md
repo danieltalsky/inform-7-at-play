@@ -2365,3 +2365,407 @@ Your own kitchen is a room.
 </div>
 </div>
 </figure>
+
+## An ordinary name
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"An ordinary name"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">4 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine raisins</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A damp box of raisins that even your Grandma won&#x27;t eat.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine old faded box</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A damp box of raisins that even your Grandma won&#x27;t eat.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take box of raisins</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  an old faded box of raisins</samp></pre>
+</div>
+</div>
+</figure>
+
+## Other words for the same object
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"Other words for the same object"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+Understand "packet" or "carton" as the box of raisins.
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">3 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine packet</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A damp box of raisins that even your Grandma won&#x27;t eat.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take carton</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  an old faded box of raisins</samp></pre>
+</div>
+</div>
+</figure>
+
+## A book with a title
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"A book with a title"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+The garden guide is a thing in Grandma's Backyard.
+The printed name of the garden guide is "Weeds and Other Relatives".
+The garden guide is proper-named.
+The description of the garden guide is "A pocket guide to the plants Grandma insists are flowers."
+Understand "weeds and other relatives" or "weeds/relatives/guide" as the garden guide.
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">4 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins and Weeds and Other Relatives here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine weeds and other relatives</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A pocket guide to the plants Grandma insists are flowers.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine garden guide</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A pocket guide to the plants Grandma insists are flowers.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take guide</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  Weeds and Other Relatives</samp></pre>
+</div>
+</div>
+</figure>
+
+## Names inside text
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"Names inside text"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+The garden guide is a thing in Grandma's Backyard.
+The printed name of the garden guide is "Weeds and Other Relatives".
+The garden guide is proper-named.
+The description of the garden guide is "A pocket guide to the plants Grandma insists are flowers."
+Understand "weeds and other relatives" or "weeds/relatives/guide" as the garden guide.
+
+The description of Grandma's Backyard is
+"Beside [the old faded box of raisins] lies [the garden guide]."
+
+Instead of examining the old faded box of raisins:
+    say "[The old faded box of raisins] is still damp."
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">2 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+Beside the old faded box of raisins lies Weeds and Other Relatives.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+Beside the old faded box of raisins lies Weeds and Other Relatives.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine raisins</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The old faded box of raisins is still damp.</samp></pre>
+</div>
+</div>
+</figure>
+
+## Captain Fabulous and the neighbor
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"Captain Fabulous and the neighbor"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+Captain Fabulous is a woman in Grandma's Backyard.
+The neighbor is a man in Grandma's Backyard.
+The printed name of the neighbor is "neighbor with the rake".
+
+The description of Captain Fabulous is
+"[The Captain Fabulous] checks the hydrangeas."
+The description of the neighbor is
+"[The neighbor] checks the gate."
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">3 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins, Captain Fabulous and a neighbor with the rake here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine captain</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Captain Fabulous checks the hydrangeas.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine neighbor</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The neighbor with the rake checks the gate.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins, Captain Fabulous and a neighbor with the rake here.</samp></pre>
+</div>
+</div>
+</figure>
+
+## Gardening gloves and potting soil
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"Gardening gloves and potting soil"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+Some gardening gloves are in Grandma's Backyard.
+The description of the gardening gloves is "[The gardening gloves] are muddy."
+
+The potting soil is a thing in Grandma's Backyard.
+The indefinite article of the potting soil is "some".
+The description of the potting soil is "[The potting soil] is damp."
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">5 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins, some gardening gloves and some potting soil here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine gloves</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The gardening gloves are muddy.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine soil</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The potting soil is damp.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take gloves</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take soil</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  some potting soil
+  some gardening gloves</samp></pre>
+</div>
+</div>
+</figure>
+
+## A source name the player cannot use
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"A source name the player cannot use"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+The backyard morale apparatus is a privately-named thing in Grandma's Backyard.
+The printed name of the backyard morale apparatus is "plastic lawn flamingo".
+The description of the backyard morale apparatus is "A pink plastic flamingo wearing a tiny paper crown."
+Understand "flamingo" or "pink bird" or "plastic flamingo" as the backyard morale apparatus.
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">5 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins and a plastic lawn flamingo here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine apparatus</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You can&#x27;t see any such thing.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine flamingo</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A pink plastic flamingo wearing a tiny paper crown.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine pink bird</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">A pink plastic flamingo wearing a tiny paper crown.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take flamingo</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  a plastic lawn flamingo</samp></pre>
+</div>
+</div>
+</figure>
+
+## Learning a neighbor's name
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"Learning a neighbor's name"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+The quiet neighbor is a woman in Grandma's Backyard.
+The description of the quiet neighbor is
+"[The quiet neighbor] is checking on Grandma's lavender."
+
+Instead of examining the quiet neighbor for the first time:
+    now the printed name of the quiet neighbor is "Auntie Bev";
+    now the quiet neighbor is proper-named;
+    say "The neighbor introduces herself as Auntie Bev."
+
+Understand "Auntie Bev" as the quiet neighbor
+    when the quiet neighbor is proper-named.
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">5 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins and a quiet neighbor here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine auntie bev</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You can&#x27;t see any such thing.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine neighbor</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The neighbor introduces herself as Auntie Bev.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+You can see an old faded box of raisins and Auntie Bev here.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine auntie bev</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Auntie Bev is checking on Grandma&#x27;s lavender.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">examine neighbor</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Auntie Bev is checking on Grandma&#x27;s lavender.</samp></pre>
+</div>
+</div>
+</figure>
+
+## Listing Grandma's tea
+
+Source: [naming/README.md](../naming/README.md)
+
+```inform7
+"Listing Grandma's tea"
+
+Grandma's Backyard is a room.
+An old faded box of raisins is in Grandma's Backyard.
+The description of the old faded box of raisins is "A damp box of raisins that even your Grandma won't eat."
+
+An overripe pear is an edible thing in Grandma's Backyard.
+A mystery cupcake is an edible thing in Grandma's Backyard.
+The description of Grandma's Backyard is
+"Backyard tea: [a list of edible things in Grandma's Backyard]."
+```
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">5 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+Backyard tea: an overripe pear and a mystery cupcake.
+
+You can see an old faded box of raisins here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+Backyard tea: an overripe pear and a mystery cupcake.
+
+You can see an old faded box of raisins here.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">eat pear</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the overripe pear)
+You eat the overripe pear. Not bad.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+Backyard tea: a mystery cupcake.
+
+You can see an old faded box of raisins here.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">eat mystery cupcake</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the mystery cupcake)
+You eat the mystery cupcake. Not bad.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Grandma&#x27;s Backyard
+Backyard tea: nothing.
+
+You can see an old faded box of raisins here.</samp></pre>
+</div>
+</div>
+</figure>
