@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inform 7 at Play — All samples</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f0e5;color:#342f28;font:18px/1.6 Georgia,serif}
+main{max-width:900px;margin:auto;padding:30px 18px 60px}h1{font-size:clamp(28px,5vw,42px);line-height:1.2}
+h2{font-size:25px;margin:0 0 8px}a{color:#345c4b}section{margin:36px 0 54px;scroll-margin-top:20px}
+.controls{display:flex;flex-wrap:wrap;gap:12px;padding:18px 0;border-block:1px solid #c8c0af}
+label{display:flex;flex:1;min-width:180px;flex-direction:column;font:14px/1.5 system-ui,sans-serif}
+input,select{width:100%;padding:10px;border:1px solid #8d948a;border-radius:5px;background:#fffdf7;color:#342f28;font:16px system-ui,sans-serif}
+.meta,.notes,summary,#count{font:14px/1.6 system-ui,sans-serif}.notes{padding:12px;border-left:3px solid #8d948a}
+pre.source{padding:18px;background:#eae4d6;border-radius:8px;font:14px/1.7 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+summary{cursor:pointer;font-weight:600}section[hidden]{display:none}a.permalink{text-decoration:none;color:inherit}
+</style>
+</head>
+<body><main>
+<h1>Inform 7 at Play</h1>
+<p>Every chapter sample, compiled and played. Explore the source, compare the responses, and refine the shared terminal design.</p>
+<p class="meta"><a href="examples.json" download>Download all source and transcripts as JSON</a>. Edit each sample and its metadata together in the linked chapter.</p>
+<div class="controls">
+<label>Search samples<input id="search" type="search" placeholder="Title, source, or transcript"></label>
+<label>Chapter<select id="chapter"><option value="">All chapters</option>{% for document in documents %}<option value="{{ document }}">{{ document }}</option>{% endfor %}</select></label>
+</div>
+<p id="count" role="status">{{ examples|length }} samples</p>
+{% for example in examples %}
+<section id="{{ example.id }}" data-document="{{ example.document }}">
+<h2><a class="permalink" href="#{{ example.id }}">{{ example.title }}</a></h2>
+<p class="meta"><a href="../../{{ example.document }}">{{ example.document }}</a> · <code>{{ example.id }}</code></p>
+<p class="meta"><strong>{{ example.kind|capitalize }}</strong>{% if example.get('requires') %} · Builds on {% for name in example.requires %}<a href="#{{ name }}">{{ name }}</a>{{ ', ' if not loop.last else '' }}{% endfor %}{% endif %}{% if example.get('instead_of') %} · Instead of {% for name in example.instead_of %}<a href="#{{ name }}">{{ name }}</a>{{ ', ' if not loop.last else '' }}{% endfor %}{% endif %}</p>
+<p class="meta">{{ example.explanation }}</p>
+{% if example.get('notes') %}<p class="notes">{{ example.notes }}</p>{% endif %}
+<details><summary>Assembled Inform source{% if example.get('sources') %} · {{ example.sources|join(' + ') }}{% endif %}</summary><pre class="source"><code>{{ example.source }}</code></pre></details>
+{{ example.terminal|safe }}
+</section>
+{% endfor %}
+<script>
+const search = document.querySelector('#search');
+const chapter = document.querySelector('#chapter');
+const sections = [...document.querySelectorAll('section')];
+const searchable = sections.map(section => section.textContent.toLowerCase());
+function filter() {
+  const query = search.value.trim().toLowerCase();
+  let visible = 0;
+  sections.forEach((section, i) => {
+    section.hidden = (chapter.value && section.dataset.document !== chapter.value) || !searchable[i].includes(query);
+    if (!section.hidden) visible++;
+  });
+  document.querySelector('#count').textContent = `${visible} of ${sections.length} samples`;
+}
+search.addEventListener('input', filter);
+chapter.addEventListener('change', filter);
+</script>
+</main></body></html>

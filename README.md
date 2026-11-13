@@ -1,10 +1,16 @@
-# Inform 7 At Play
+# Make your story a world.
 
 **Inform 7 with illustrative examples of play**
 
 Build rich worlds using natural language, as easy as:
 
-<!-- inform-example: breezeway -->
+<!-- inform-example: breezeway
+title = "An edible apple"
+kind = "standalone"
+explanation = "A complete room and edible object; starts a fresh story."
+commands = ["eat apple", "inventory"]
+expect = ["(first taking the shiny apple)", "You eat the shiny apple. Not bad.", "You are carrying nothing."]
+-->
 ```inform7
 The Beautiful Breezeway is a room.  
 
@@ -44,13 +50,13 @@ Things fill the real world and your world should probably have them.
 
 ### [How to use verbs and actions.](actions/)
 
-(About 50% done)
+@TODO Finish the actions chapter with report rules, new actions, and Instead examples.
 
 Let people unbend paperclips, ring bells, ride horses, and flip coins.
 
 ### [How to put semi-convincing people in your places.](people/)
 
-(About 20% done)
+@TODO Expand the people chapter with conversation, movement, and responses to events.
 
 Heck is other people.
 
@@ -58,18 +64,18 @@ Heck is other people.
 
 How to do some fancy setup to polish your world and make it unique.
 
-### [Common Mistakes (and How to Fix Them)](naming/)
+### [Common Mistakes (and How to Fix Them)](mistakes/)
 
-(Not yet started.)
+@TODO Write the common-mistakes examples and fixes.
 
 Sometimes Inform doesn't understand what you're trying to tell it to do.  Here's how you can avoid or figure out some common problems.
 
 ### [Annoyingly complicated rules for naming things.](naming/)
 
-(Not yet started)
+@TODO Write the naming examples and explanations.
 
 Don't even bother reading this until you run into a problem with naming people, places, or things.
 
-### [I have no idea what any of this means.](faq/)
+### [Getting Started](getting-started/)
 
 What is Inform 7?  Who are you?  How do you do any of this?  What are you talking about?

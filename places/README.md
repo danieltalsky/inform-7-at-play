@@ -6,7 +6,14 @@ People walk around in places in the real world.  The best way to help people fee
 
 Let's make a room.  It's easy.
 
-<!-- inform-example: featureless-room -->
+<!-- inform-example: featureless-room
+title = "A room with no exits"
+kind = "standalone"
+explanation = "The first complete world in this chapter."
+commands = ["look", "walk north"]
+expect = ["You are in a room, that much you can tell.", "You can't go that way."]
+chapter_transcript = true
+-->
 ```inform7
 The Featureless Room is a room.
 The description of The Featureless Room is 
@@ -42,6 +49,13 @@ We didn't give the room any exits so Inform won't let the player leave.  By defa
 
 _{Shortcut}:_ You can leave out the name of the room in the description as long as you put it right after naming the room.  Inform will know which room you're talking about as long as it's the last thing you mentioned:
 
+<!-- inform-example: warehouse
+title = "The last-mentioned room"
+kind = "standalone"
+explanation = "A separate complete room demonstrating the description shorthand."
+commands = ["look"]
+expect = ["Large and metal."]
+-->
 ```inform7
 The Warehouse is a room.
 The description is "Large and metal.".
@@ -54,6 +68,13 @@ Not every place in the world is a room.  There are caves, planets, wide-open fie
 
 Even though not every place is a room, when you're making worlds in Inform, you call any place you can enter and leave `a room`.  
 
+<!-- inform-example: imaginary-places
+title = "Every place is a room"
+kind = "standalone"
+explanation = "A fresh collection of rooms illustrating what counts as a room."
+commands = ["look"]
+expect = ["Your boat is tossed to and fro."]
+-->
 ```inform7
 The center of the wild sea is a room.
 The description of the sea is "Your boat is tossed to and fro.".
@@ -83,7 +104,13 @@ Inform has the idea of compass directions built in.  It knows north and south an
 
 You can do this to give two rooms a relationship with each other:
 
-<!-- inform-example: north-and-south -->
+<!-- inform-example: north-and-south
+title = "Moving between rooms"
+kind = "standalone"
+explanation = "Both rooms and their connection are defined here."
+commands = ["north", "south", "north"]
+expect = ["You can't go that way.", "Southern Tip of the Island", "A very rocky place.", "A very sandy place."]
+-->
 ```inform7
 The Northern Tip of the Island is a room.
 The description is "A very rocky place.".
@@ -110,6 +137,13 @@ Now you can move around:
 
 The compass directions let you go in eight different directions from any location, but you have two more directions you can use.  Just like in the real world you can also go up or down, like this.
 
+<!-- inform-example: up-and-down
+title = "Above and below"
+kind = "standalone"
+explanation = "Starts a new clearing, treehouse, and burrow example."
+commands = ["up", "down", "down", "up"]
+expect = ["You can just barely fit down here."]
+-->
 ```inform7
 The little clearing is a room.   
 The description is "A little clearing in the forest.  There is a tree with a treehouse above you, and a small hole in the ground leading to a burrow."
@@ -117,7 +151,7 @@ The description is "A little clearing in the forest.  There is a tree with a tre
 The treehouse is a room above the little clearing.
 The description is "Girls are allowed."
 The little clearing is above the burrow in the ground. 
-[[When you use north and south you can just specify one of the rooms is north and the other room with know it's south.  With "above" and "below" you have to specify both.]]
+[[Above and below are reciprocal, just like north and south. The reverse connections below are explicit but not required.]]
 
 The burrow in the ground is a room below the little clearing.
 The description is "You can just barely fit down here."
@@ -146,7 +180,17 @@ The little clearing is below the treehouse.
 
 There's one more way Inform lets you move between rooms, and that's `in` and `out`.  A room can be `inside` or `outside` another room like this:
 
+<!-- inform-example: in-and-out
+title = "Inside and outside"
+kind = "standalone"
+explanation = "Both the mudroom and kennel are defined here."
+commands = ["in", "out"]
+expect = ["It's uncomfortable in here and you feel silly."]
+-->
 ```inform7
+The mudroom is a room.
+The description is "The mudroom is actually very muddy. There is a large dog kennel on the floor that you could probably fit inside."
+
 The dog kennel is a room.  
 The dog kennel is inside from the mudroom.
 [[It doesn't work to say:
@@ -175,6 +219,13 @@ Now you know how to let people walk around your worlds, but walking around gets 
 
 Consider this room:
 
+<!-- inform-example: gallery-description
+title = "A description does not create scenery"
+kind = "standalone"
+explanation = "Starts the gallery example before any scenery is defined."
+commands = ["look at sculpture", "look at painting"]
+expect = ["You can't see any such thing."]
+-->
 ```inform7
 The art gallery is a room.
 The description is "This is not the most impressive art gallery you've ever seen.  It only has two pieces of art, a sculpture on a pedestal and a painting hung on the wall."
@@ -193,6 +244,14 @@ That creates this situation:
 
 That's not very convincing, and it's actually pretty confusing.  Inform doesn't know about things just because you talk about them in your description.  You have to "make" them just like rooms.  It's pretty simple, however, just add this:
 
+<!-- inform-example: gallery-scenery
+title = "Adding scenery"
+kind = "additive"
+requires = ["gallery-description"]
+explanation = "Add these scenery declarations to the gallery above."
+commands = ["look at sculpture", "look at painting", "look at pedestal"]
+expect = ["You see nothing special about the sculpture."]
+-->
 ```inform7
 The sculpture is scenery in the art gallery.
 The painting is scenery in the art gallery.
@@ -211,6 +270,14 @@ Now we get this:
 
 Whoops.  That's a little better, but if we're willing to put in the work we can make our world richer and more consistent.  We can describe everything someone might look at (within reason).  Scenery can have a description just like a room.  Let's put it all together:
 
+<!-- inform-example: gallery-details
+title = "Describing scenery"
+kind = "alternative"
+instead_of = ["gallery-description", "gallery-scenery"]
+explanation = "A complete consolidated gallery; replaces the earlier room and scenery blocks."
+commands = ["look at sculpture", "look at painting", "look at pedestal", "look at brushstrokes"]
+expect = ["A very boring grey pedestal."]
+-->
 ```inform7
 The art gallery is a room.
 The description is "This is not the most impressive art gallery you've ever seen.  It only has two pieces of art, a sculpture on a pedestal and a painting hung on the wall."
@@ -244,6 +311,14 @@ It's a sculpture of a Gordian Knot made out of marble.
 
 Whoops.  You have to decide how detailed you want to get describing every little thing, but there's a quick trick that helps.  You can add:
 
+<!-- inform-example: gallery-alias
+title = "An alias for brushstrokes"
+kind = "additive"
+requires = ["gallery-details"]
+explanation = "Add parser vocabulary to the fully described painting."
+commands = ["look at brushstrokes"]
+expect = ["The painting is abstract with bold red and blue brushstrokes."]
+-->
 ```inform7
 Understand "brushstrokes" as the painting.
 ```
@@ -253,7 +328,7 @@ This is an improvement:
 > **\>`look at brushstrokes`**  
 > The painting is abstract with bold red and blue brushstrokes.
 
-## TO DO: Reminders to myself:
+## @TODO Remaining place topics
 - scenery vs backgrounds
 - regions vs "everywhere"
 

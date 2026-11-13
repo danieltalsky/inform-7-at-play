@@ -1,11 +1,11 @@
 """Compare a cross-compiled Linux console interpreter with native transcripts."""
 
 import argparse
-import json
 import subprocess
 import sys
 
-from run import PROTOTYPE, format_transcript
+from run import PROTOTYPE, encode_commands, format_transcript
+from catalog import load_catalog
 
 
 def main():
@@ -20,11 +20,12 @@ def main():
             text=True, timeout=15).strip()
 
     interpreter = linux_path(PROTOTYPE / "build/console-glulxe-linux")
-    for example in json.loads((PROTOTYPE / "examples.json").read_text()):
+    examples, _ = load_catalog()
+    for example in examples:
         folder = PROTOTYPE / "build" / example["id"]
         result = subprocess.run(
             wsl + [interpreter, "-q", "-u", linux_path(folder / "story.ulx")],
-            input=("\n".join(example["commands"]) + "\n").encode("utf-8"),
+            input=encode_commands(example["commands"]),
             capture_output=True, timeout=60)
         if result.returncode or result.stderr:
             raise RuntimeError(result.stderr.decode(errors="replace"))

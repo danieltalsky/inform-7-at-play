@@ -48,34 +48,90 @@ raw console output, and formatted transcripts remain under ignored `prototype/bu
 Inform defaults to `C:\Program Files\Inform`. Use `--inform 'D:\Apps\Inform'`
 or set `INFORM_HOME` for another installation location.
 
+## Complete sample catalog
+
+All 66 Inform source fences across the chapters have a stable ID and a hidden
+metadata comment immediately above the code. Code, commands, expected responses,
+and composition are edited together in the chapter. There is no separate JSON
+catalog to maintain. JSON is generated output only.
+
+The comments use TOML, parsed with Python's standard library. Every sample has a
+`title`, `kind`, `explanation`, `commands` array, and nonempty `expect` array.
+The three kinds describe how to use the block:
+
+- `standalone`: a complete starting world, independent of preceding blocks.
+- `additive`: append this block to the examples listed in `requires`.
+- `alternative`: use this version instead of the blocks listed in `instead_of`.
+  `requires` names any shared base that the replacement still needs.
+
+`requires` follows dependencies recursively, in the listed order, and includes
+each source block once. For example, `red-ball-description` requires only
+`basic-things`, which already requires `the-place`. It does not include every
+preceding fence in the chapter. `instead_of` records the earlier version being
+replaced; that source is never automatically included. The loader rejects unknown
+IDs, cycles, duplicate tags, missing metadata, and compositions containing both
+an alternative and the version it replaces.
+
+`explanation` records the editorial inference from the prose, including whether
+a shortcut replaces just part of a longer block. These explanations and dependency
+links appear in the gallery for review. Optional `context` supplies a minimal
+starting room when a fragment cannot reuse a whole earlier block (for example,
+replacing a room description would otherwise define it twice). Context is
+inherited through dependencies. Existing titles and author lines are preserved.
+
+Every complete run also exports `build/examples.json`, containing all recipes,
+the assembled Inform `source`, and a structured `transcript` with `initial` text
+and `turns` (`command` and `response`). Each sample has its own
+`build/EXAMPLE_ID/example.json` as well. These are generated artifacts; edit the
+chapter comment and source, then regenerate.
+
+To iterate on a single sample without rewriting the full documentation:
+
+```powershell
+uv run --project . python prototype/run.py --example wearable-shirt
+```
+
+This updates only that sample's capture files. Run the full generator again to
+refresh the aggregate JSON, generated page, and gallery inputs.
+
 ## How examples are selected
 
-An invisible HTML comment immediately before an Inform source fence supplies a
-stable ID:
+An invisible HTML comment immediately before an Inform source fence supplies the
+stable ID and recipe. A standalone example looks like this:
 
 ````markdown
-<!-- inform-example: breezeway -->
+<!-- inform-example: breezeway
+title = "An edible apple"
+kind = "standalone"
+explanation = "A complete room and edible object; starts a fresh story."
+commands = ["eat apple", "inventory"]
+expect = ["You eat the shiny apple. Not bad."]
+-->
 ```inform7
 The Beautiful Breezeway is a room.
+A shiny apple is in the Beautiful Breezeway. It is edible.
 ```
 ````
 
-[examples.json](examples.json) maps each ID to a document, story title, command
-sequence, and expected response fragments. The runner rejects missing or repeated
-tags for a selected ID. Inserting or moving unrelated code blocks doesn't change
-the selection.
+For an addition, use `kind = "additive"` and `requires = ["breezeway"]`.
+For a replacement, use `kind = "alternative"`, name the earlier block in
+`instead_of`, and retain only its shared prerequisites in `requires`.
+See `basic-things` and `wearable-shirt` in [the things chapter](../things/README.md)
+for real additive and alternative recipes. Keep the IDs stable when editing or
+moving blocks.
 
 The opening room example in Making Places also sets `"chapter_transcript": true`.
 Its output lives between `<!-- inform-transcript: featureless-room -->` and
 `<!-- /inform-transcript: featureless-room -->` comments. The runner replaces only
 the content between those markers, keeping the surrounding prose and source.
-Chapter output omits the compiler banner and uses a styled HTML terminal panel.
-The full banner remains in `generated.md`.
+Rendered output omits the story title, author/headline, and release banner and
+uses a styled HTML terminal panel. Raw text and JSON captures retain the banner.
 
-To edit this example, change its Inform source in the chapter or its commands in
-`examples.json`, run the generator, and review both the chapter and proof-page
-diffs. Don't hand-edit the generated region: CI detects changes to it. The rest
-of the chapters still have their original handwritten transcripts.
+To edit this example, change its Inform source or adjacent metadata comment in
+the chapter, run the generator, and review both the chapter and proof-page
+diffs. Don't hand-edit the generated region: CI detects changes to it. The other
+chapter transcripts remain handwritten for comparison; the complete generated
+page and gallery show the actual output of every code sample.
 
 ## Terminal presentation
 
@@ -99,8 +155,15 @@ the current output after running the generator:
 uv run --project . python prototype/preview.py
 ```
 
-Open `prototype/build/terminal-preview.html` in a browser. Edit the Jinja template
-to adjust presentation, then regenerate the documentation with the usual command.
+Open `prototype/build/terminal-preview.html` in a browser. Search by text or filter
+by chapter, expand assembled source, and download the full source/transcript JSON.
+The gallery omits story banners while preserving opening introductions and room
+descriptions. Edit the Jinja template to adjust presentation, then
+regenerate the documentation and preview with the usual commands.
+
+The capture harness currently supports ordinary commands, not replies to
+disambiguation questions. The basic-things recipe therefore uses `look at green
+ball` explicitly; its original interactive clarification remains in the chapter.
 
 ## Capture contract
 
@@ -118,7 +181,8 @@ rather than guessing from a `>` in story text.
 CheapGlk doesn't echo piped input, so the runner inserts the submitted commands
 into the transcript. It removes only harness markers, prompts used for framing,
 the console EOF trailer, and surrounding whitespace. Story responses come from the
-interpreter. The compiler banner remains visible.
+interpreter. The story banner remains in raw captures and is removed only for
+HTML presentation.
 
 Commands must be nonempty single lines of at most 250 UTF-8 bytes. Examples must
 use the standard Inform prompt and return to command input after their final

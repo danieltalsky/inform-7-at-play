@@ -4,6 +4,13 @@ It's a lot easier to make a convincing bouncy ball in your fictional world than 
 
 People are complicated, though so let's start simple.  With a rhino.
 
+<!-- inform-example: rhino
+title = "An animal instead of a thing"
+kind = "standalone"
+explanation = "Defines the room, apple, and animal together."
+commands = ["look at rhino", "take rhino", "hug rhino", "feed apple to rhino"]
+expect = ["The rhino doesn't seem interested."]
+-->
 ```inform7
 The Serengeti is a room. "It's not just endless sand dunes.  There are trees, for instance."
 
@@ -33,12 +40,7 @@ All we have to do is say the rhino is an animal and not a thing and right away w
 >\>**`feed apple to rhino`**  
 > The rhino doesn't seem interested.
 
- .   
- .     
- .       
-
----
-## TO DO: Reminders to myself:
+## @TODO Remaining people topics
 - Men and women
 - Ask ... about
 - Tell ... about

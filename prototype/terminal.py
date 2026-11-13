@@ -28,8 +28,10 @@ class Transcript:
         return text.rstrip() + "\n"
 
     def without_banner(self):
-        banner = (r"\A[^\n]+\nAn Interactive Fiction\n"
-                  r"Release [^\n]+ / Inform 7 v[^\n]+\n\n")
+        # An introduction may precede the banner, and both the headline and
+        # author are customizable. Anchor removal to the pinned release line.
+        banner = (r"(?:\A|(?<=\n\n))[^\n]+\n[^\n]+\n"
+                  r"Release [^\n]+ / Inform 7 v[^\n]+(?:\n\n|\Z)")
         initial, count = re.subn(banner, "", self.initial, count=1)
         if count != 1:
             raise ValueError("Unrecognized story banner; refusing to trim it")

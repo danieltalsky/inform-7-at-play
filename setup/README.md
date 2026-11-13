@@ -4,6 +4,13 @@ There are lots of cool things you can do to make your world unique and help your
 
 Let's start with the smallest Inform world you can create.  It looks something like this:
 
+<!-- inform-example: tiny-world
+title = "The smallest world"
+kind = "standalone"
+explanation = "A complete title and starting room."
+commands = ["look"]
+expect = ["boring place"]
+-->
 ```inform7
 "An Extremely Boring and Tiny World"
 [[The title of the game]]
@@ -24,6 +31,15 @@ The boring place is a room.
 
 One piece of information you can add is your name, or a nom de plume.
 
+<!-- inform-example: story-author
+title = "Adding an author"
+kind = "alternative"
+instead_of = ["tiny-world"]
+explanation = "Replace only the title line of tiny-world; context retains its starting room."
+context = "The boring place is a room."
+commands = []
+expect = ["by The World's Most Interesting Person"]
+-->
 ```inform7
 "A Fictional World I Created" by The World's Most Interesting Person
 
@@ -42,6 +58,14 @@ Sometimes it helps to add a little introduction, to orient the player and let th
 
 Just add:
 
+<!-- inform-example: opening-introduction
+title = "An opening introduction"
+kind = "additive"
+requires = ["story-author"]
+explanation = "Add the introduction to the authored story, retaining its room."
+commands = ["look"]
+expect = ["You probably shouldn't have pressed that button"]
+-->
 ```inform7
 When play begins, say 
 "You're in an imaginary world.  You probably shouldn't have pressed that button that said 'Teleport me to an imaginary world.'  Now you've done it.".
@@ -68,6 +92,14 @@ By default Inform will introduce your story after the title as:
 
 If you don't want it to say that, you can come up with your own:
 
+<!-- inform-example: story-headline
+title = "A custom headline"
+kind = "additive"
+requires = ["story-author"]
+explanation = "Add a custom headline to the authored story; the introduction is independent and omitted here."
+commands = []
+expect = ["An unreal place you can walk around in"]
+-->
 ```inform7
 The story headline is "An unreal place you can walk around in"
 ```
@@ -93,6 +125,14 @@ Sometimes the player might try this:
 
 You can make your own custom response.
 
+<!-- inform-example: player-description
+title = "Describing the player"
+kind = "additive"
+requires = ["tiny-world"]
+explanation = "Add a player description to the minimal runnable world."
+commands = ["look self"]
+expect = ["You are a weird alien with tentacles instead of arms."]
+-->
 ```inform7
 The description of the player is "You are a weird alien with tentacles instead of arms.".
 ```
@@ -104,6 +144,13 @@ And now:
 
 ### Looking at things that don't have a description
 
+<!-- inform-example: undescribed-stone
+title = "The default object description"
+kind = "standalone"
+explanation = "Starts a fresh field and stone example."
+commands = ["look stone"]
+expect = ["You see nothing special about the dry stone."]
+-->
 ```inform7
 The field is a room.
 There is a dry stone in the field.
@@ -114,6 +161,14 @@ There is a dry stone in the field.
 
 We can do better than that, right?  Here's how to say something else:
 
+<!-- inform-example: default-description
+title = "Changing the default description"
+kind = "additive"
+requires = ["undescribed-stone"]
+explanation = "Add a default object description to the existing stone example."
+commands = ["look stone"]
+expect = ["You look at the dry stone very closely indeed"]
+-->
 ```inform7
 The description of a thing is usually "You look at [the noun] very closely indeed, and to be completely honest, it looks about how you'd expect. You think for a moment that there might be something slightly special about it but then, upon looking just a little closer, you see that there isn't."
 ```
@@ -132,6 +187,14 @@ Normally when you check your inventory you get a boring message like this:
 
 Overriding this message requires some special Inform 7 magic with this odd-looking command:
 
+<!-- inform-example: empty-inventory
+title = "Changing the empty inventory message"
+kind = "additive"
+requires = ["tiny-world"]
+explanation = "Add a response override to a minimal world with no carried objects."
+commands = ["inventory"]
+expect = ["You look everywhere but finally come to realize that you have no possessions."]
+-->
 ```inform7
 The print empty inventory rule response (A) is "You look everywhere but finally come to realize that you have no possessions."
 ```
@@ -146,6 +209,13 @@ Now:
 By default, the verb `use` isn't something Inform understands.  You can set
 up some rules to make life easier for players.
 
+<!-- inform-example: garage
+title = "Use is not a built-in verb"
+kind = "standalone"
+explanation = "Starts a complete garage example with three objects to use."
+commands = ["use cage", "use switch", "use candy"]
+expect = ["That's not a verb I recognise."]
+-->
 ```inform7
 The garage is a room.  
 
@@ -175,6 +245,14 @@ Let's see how use works by default:
 
 We can do better by setting up some default rules for using things.
 
+<!-- inform-example: use-command
+title = "Making use useful"
+kind = "additive"
+requires = ["garage"]
+explanation = "Add grammar to the garage example so use selects the appropriate built-in action."
+commands = ["use cage", "use cage", "use switch", "use switch", "use candy"]
+expect = ["You eat the peanut candy. Not bad."]
+-->
 ```inform7
 Understand "use [a closed openable thing]" as opening.
 Understand "use [a open openable thing]" as closing.

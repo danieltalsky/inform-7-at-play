@@ -4,6 +4,8 @@ Inform understands a very specific set of English language commands.  Sometimes 
 
 This is a guide to some common mistakes and errors, and how to fix them.
 
-## TO DO: Reminders to myself:
+@TODO Add broken-source examples, the compiler messages they produce, and corrected versions.
+
+## @TODO Remaining mistake topics
 - Periods in the wrong place
 - Sentence constructions that seem like they would work but don't.

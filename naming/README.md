@@ -2,13 +2,9 @@
 
 There are some hidden gotchas when it comes to naming things, making them plural, giving them the right articles and other complications.  This is actually a hard thing to get right in Inform 7 so here are some answers.
 
- .   
- .     
- .       
+@TODO Write worked examples of naming, articles, and disambiguation, pairing each rule with example play.
 
----
-
-## TO DO: Reminders to myself:
+## @TODO Remaining naming topics
 - Proper naming
 - Complicated rules around articles
 - Gender

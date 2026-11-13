@@ -35,6 +35,8 @@ jobs:
           --inform6 prototype/build/inform-linux/usr/lib/x86_64-linux-gnu/inform7-ide/inform6
           --internal prototype/build/inform-linux/usr/share/inform7-ide
           --check
+      - name: Render all-sample preview
+        run: uv run --locked --project . python prototype/preview.py
       - name: Save diagnostic logs and transcripts
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -48,3 +50,6 @@ jobs:
             prototype/build/*/story.ni
             prototype/build/*/console-output.txt
             prototype/build/*/transcript.txt
+            prototype/build/*/example.json
+            prototype/build/examples.json
+            prototype/build/terminal-preview.html

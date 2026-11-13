@@ -1,4 +1,4 @@
-# Inform 7: Making Actions
+# Making Actions
 
 People want to do stuff.  You can let them.
 
@@ -7,6 +7,13 @@ There are a few actions Inform 7 understands out of the box.
 Imagine this unlikely scenario made of less than 100 words:
 
 
+<!-- inform-example: standard-actions
+title = "Built-in actions"
+kind = "standalone"
+explanation = "Defines the entire two-room action demonstration and all its objects."
+commands = ["think", "look self", "look at crate", "look under crate", "push crate", "push crate south", "look", "push crate north", "chop crate", "smell grandson", "kiss grandson", "kiss crate", "attack grandson", "ask grandson about Apocalypse Now", "tell grandson about monkeys", "consult grandson about existentialism", "wake grandson up", "wipe jumpsuit", "get pocket", "open pocket", "put figurine on crate", "polish figurine"]
+expect = ["You open the breast pocket"]
+-->
 ```inform7
 Kyrgyzstan is a room.  
 [[Actually a country but let's let it slide.]]  
@@ -23,7 +30,7 @@ Your Great Great Grandson is a person in Kyrgyzstan.
 The description is "He's wearing a hand-made jumpsuit."
 Grandson wears a hand-made canvas jumpsuit.
 The breast pocket is part of the jumpsuit.  
-It is openable and closed. 
+It is an openable closed container.
 In the pocket is a creepy pewter figurine.  
 ```
 
@@ -131,6 +138,13 @@ documentation</a>, but here are some useful ones you can grab and make your own:
 
 Let's say you want to use another word for "smell":
 
+<!-- inform-example: perfume-bottle
+title = "Before adding a command synonym"
+kind = "standalone"
+explanation = "Starts a new complete world for command synonyms."
+commands = ["look bottle", "smell bottle", "inhale bottle"]
+expect = ["That's not a verb I recognise."]
+-->
 ```inform7
 The Boudoir is a room.  
 There is an empty perfume bottle in the boudoir.  
@@ -153,6 +167,14 @@ Let's try inhaling:
 
 There's an easy way to make a synonym for smelling:
 
+<!-- inform-example: inhale-command
+title = "A synonym for smelling"
+kind = "additive"
+requires = ["perfume-bottle"]
+explanation = "Add an inhale synonym to the existing bottle example."
+commands = ["inhale bottle"]
+expect = ["You smell nothing unexpected."]
+-->
 ```inform7
 Understand the command "inhale" as "smell".
 ```
@@ -172,6 +194,14 @@ Here we're using it in a similar way: this new name is the same as a name you al
 
 One of the easiest ways to make a totally new action work is by making it a `mistake`:
 
+<!-- inform-example: statue-mistake
+title = "A command that prints a message"
+kind = "additive"
+explanation = "An independent command rule; context provides a minimal room and no statue object is needed for this literal command."
+context = "The demonstration room is a room."
+commands = ["yell at the statue"]
+expect = ["The statue does not understand how serious you are about this."]
+-->
 ```inform7
 Understand "yell at the statue" as a mistake 
 ("The statue does not understand how serious you are about this.").
@@ -190,25 +220,45 @@ lets you just print out a message and tell Inform not to do anything else.
 
 
 
-### @TODO
+### @TODO Explain report rules for actions without an object, with a smelling transcript
 
+<!-- inform-example: report-smelling
+title = "A report rule"
+kind = "additive"
+requires = ["perfume-bottle"]
+explanation = "Add a report rule to a runnable room; this demonstrates smelling without a noun."
+commands = ["smell"]
+expect = ["Then again, you don't have the best sense of smell."]
+-->
 ```inform7
 Report smelling: say "Then again, you don't have the best sense of smell. Maybe if you smell specific things it will be easier to discern a smell.".
 ```
 
 ## Make a brand new action
 
-### @TODO
+### @TODO Explain defining pinching, parsing its command, and carrying out the action; add example play
 
+<!-- inform-example: pinching-action
+title = "Defining a new action"
+kind = "additive"
+requires = ["perfume-bottle"]
+explanation = "Add a new action and test it on the existing bottle."
+commands = ["pinch bottle"]
+expect = ["You pinch the empty perfume bottle."]
+-->
 ```inform7
-Understand the verb "pinch" as pinching.
+Pinching is an action applying to one thing.
+Understand "pinch [something]" as pinching.
+Carry out pinching: say "You pinch [the noun].".
 ```
 
 ## Simple actions with `instead`
 
+@TODO Show an Instead rule overriding an existing action, followed by the resulting play.
+
 ---
 
-## TO DO: Reminders to myself:
+## @TODO Remaining action topics
 
 - Overriding the current verb set
   - list of the current verb set
