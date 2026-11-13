@@ -2,12 +2,9 @@
 # Run from the repository root. The FTP login directory is the entire site.
 set -euo pipefail
 
-for name in FTP_HOST FTP_USERNAME FTP_PASSWORD; do
-  if [[ -z "${!name:-}" ]]; then
-    printf 'Missing required configuration: %s\n' "$name" >&2
-    exit 1
-  fi
-done
+: "${FTP_HOST:?Missing FTP_HOST}"
+: "${FTP_USERNAME:?Missing FTP_USERNAME}"
+: "${FTP_PASSWORD:?Missing FTP_PASSWORD}"
 if [[ ! "$FTP_HOST" =~ ^[a-zA-Z0-9][a-zA-Z0-9.-]*$ ]]; then
   printf 'FTP_HOST must be a hostname or IPv4 address, without a URL or path.\n' >&2
   exit 1
