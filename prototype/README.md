@@ -120,18 +120,18 @@ See `basic-things` and `wearable-shirt` in [the things chapter](../things/README
 for real additive and alternative recipes. Keep the IDs stable when editing or
 moving blocks.
 
-The opening room example in Making Places also sets `"chapter_transcript": true`.
-Its output lives between `<!-- inform-transcript: featureless-room -->` and
-`<!-- /inform-transcript: featureless-room -->` comments. The runner replaces only
-the content between those markers, keeping the surrounding prose and source.
-Rendered output omits the story title, author/headline, and release banner and
-uses a styled HTML terminal panel. Raw text and JSON captures retain the banner.
+An example can set `chapter_transcript = true` to generate its play inline in a
+chapter. Its output lives between matching `inform-transcript` comments; the
+runner replaces only the content between those markers, keeping the surrounding
+prose and source. This is used in Making Places, Naming things, and All About
+Things. Rendered output omits the story title, author/headline, and release banner
+and uses a styled HTML terminal panel. Raw text and JSON captures retain the banner.
 
-To edit this example, change its Inform source or adjacent metadata comment in
-the chapter, run the generator, and review both the chapter and proof-page
-diffs. Don't hand-edit the generated region: CI detects changes to it. The other
-chapter transcripts remain handwritten for comparison; the complete generated
-page and gallery show the actual output of every code sample.
+To edit one of these examples, change its Inform source or adjacent metadata
+comment in the chapter, run the generator, and review both the chapter and
+proof-page diffs. Don't hand-edit generated regions: CI detects changes to them.
+Unmarked chapter transcripts remain handwritten for comparison; the complete
+generated page and gallery show the actual output of every code sample.
 
 ## Terminal presentation
 

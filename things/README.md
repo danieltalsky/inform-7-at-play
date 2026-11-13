@@ -32,6 +32,7 @@ explanation = "Add the two balls and hammer to the starting room."
 commands = ["look at green ball", "get hammer", "inventory", "look"]
 expect = ["a hammer"]
 notes = "Uses an explicit object name; interactive disambiguation replies are not supported by the capture harness."
+chapter_transcript = true
 -->
 ```inform7
 There is a red ball in The Place.
@@ -52,29 +53,41 @@ expect = ["a hammer"]
 ```inform7
 A hammer is here.
 ```
-Run our program and we have a world we can interact with:
->**Place**  
->You can see a red ball, a green ball, and a hammer here  
->  
->\>**`look at the ball`**  
->Which do you mean, the red ball or the green ball?  
->  
->\>**`green`**  
->You see nothing special about the green ball  
->
->\>**`get hammer`**  
->Taken.  
->  
-> \>**`inventory`**  
->You are carrying:  
-> &nbsp;&nbsp;&nbsp;&nbsp; a hammer  
->  
->\>**`look`**  
->  
->**Place**  
->You're in the only place.  
->  
-> You can see a red ball and a green ball here.  
+Typing `look at the ball` would make Inform ask which ball you mean. The captured play below names the green ball explicitly.
+
+<!-- inform-transcript: basic-things -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">4 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a red ball, a green ball, and a hammer here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look at green ball</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You see nothing special about the green ball.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">get hammer</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  a hammer</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a red ball and a green ball here.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: basic-things -->
 
 ## Things you can look at
 
@@ -121,15 +134,29 @@ requires = ["the-place"]
 explanation = "Start a new object example in the chapter starting room."
 commands = ["look tv"]
 expect = ["You can't see any such thing."]
+chapter_transcript = true
 -->
 ```inform7
 There is a television in The Place.
 The description is "It's playing ESPN 8, the Ocho.".
 ```
-> You can see a television here.  
->  
->\>**`look tv`**  
->You can't see any such thing  
+<!-- inform-transcript: television -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a television here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look tv</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You can&#x27;t see any such thing.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: television -->
 
 Humans know that TV, teevee, telly, and idiot box all mean television, but Inform doesn't.  There's an easy way to tell it, though:
 
@@ -140,6 +167,7 @@ requires = ["television"]
 explanation = "Add three aliases to the television already defined."
 commands = ["look tv", "look telly", "look idiot box"]
 expect = ["It's playing ESPN 8, the Ocho."]
+chapter_transcript = true
 -->
 ```inform7
 Understand "TV" as television.
@@ -148,16 +176,31 @@ Understand "idiot box" as television.
 ```
 Now:
 
-> You can see a television here.  
->
->\>**`look tv`**  
-> It's playing ESPN 8, the Ocho.  
->  
->\>**`look telly`**  
->It's playing ESPN 8, the Ocho.  
->  
->\>**`look idiot box`**  
->It's playing ESPN 8, the Ocho  
+<!-- inform-transcript: television-aliases -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">3 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a television here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look tv</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">It&#x27;s playing ESPN 8, the Ocho.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look telly</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">It&#x27;s playing ESPN 8, the Ocho.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look idiot box</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">It&#x27;s playing ESPN 8, the Ocho.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: television-aliases -->
 
 *{shortcut}* instead of multiple "understand" statements, we can combine them like this:
 <!-- inform-example: television-or
@@ -220,6 +263,7 @@ instead_of = ["log-parts"]
 explanation = "Recreate the log with aliases instead of defining its individual parts."
 commands = ["look mosses", "look lichens", "look woodpecker holes"]
 expect = ["The log is a rich ecosystem"]
+chapter_transcript = true
 -->
 ```inform7
 A rotted log is here.
@@ -229,14 +273,41 @@ Understand "moss/mosses/lichen/lichens/mushroom/mushrooms/knot/knots/hole/holes"
 ```
 It's a nicer effect to have each individual thing described, using parts, but it's better than nothing to just add an `understand` statement so the game says this as little as possible when people are trying to look deeper into the descriptions of your game:
 
->You can't see any such thing
+<!-- inform-transcript: log-aliases -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">3 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a rotted log here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look mosses</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The log is a rich ecosystem of mosses, lichens, and little mushrooms. It is filled with little knots and woodpecker holes.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look lichens</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The log is a rich ecosystem of mosses, lichens, and little mushrooms. It is filled with little knots and woodpecker holes.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look woodpecker holes</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The log is a rich ecosystem of mosses, lichens, and little mushrooms. It is filled with little knots and woodpecker holes.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: log-aliases -->
 
 ### Things with ONLY aliases
-@TODO Explain `privately-named` with an object that can only be referred to by its aliases.
+
+Maybe you called a lawn flamingo the “backyard morale apparatus” while writing your game, but players should be able to ask about the “flamingo,” not your behind-the-scenes name. `privately-named` lets you choose just the words players can try. See [Naming things](../naming/README.md) for details.
 
 ### Things with special names (printed and proper)
 
-There are some special cases when naming things that we should get into now, so you'll know when you need them.   So, we've already shown that you can add adjectives and clauses to item names like this:
+Your garden guide might need a simple name while you write the game, but look much grander to players as *Weeds and Other Relatives*. That's its **printed name**. And if your ship is called *The Saucy Turnip*, `proper-named` stops Inform from accidentally calling it “the The Saucy Turnip.” A fancy printed name doesn't automatically teach the game what players can type. See [Naming things](../naming/README.md) for details.
+
+You can also add adjectives and clauses to item names like this:
 
 <!-- inform-example: rainbow-statue
 title = "A complicated object name"
@@ -251,8 +322,6 @@ There is a gaudy rainbow statue of Teddy Roosevelt in The Place.
 The description is "It sure is ugly.".
 ```
 
-@TODO Add examples contrasting proper names and printed names, with corresponding play.
-
 ## Things you can't take
 
 By default, the player can pick up any objects you create.  But sometimes, it doesn't make sense.
@@ -266,14 +335,35 @@ requires = ["the-place"]
 explanation = "Start the anvil example with default portability."
 commands = ["take anvil", "inventory"]
 expect = ["Taken."]
+chapter_transcript = true
 -->
 ```inform7
 There is an anvil bolted into the ground in The Place.  
 The description is 
 "The anvil is bolted into the ground for real."
 ```
->\>**`take anvil`**  
->Taken  
+<!-- inform-transcript: portable-anvil -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">2 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see an anvil bolted into the ground here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take anvil</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  an anvil bolted into the ground</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: portable-anvil -->
 
 Damn.  That's because objects in Inform can be `portable` or `fixed in place`.  By default, they're portable.  Let's put a stop to that.
 
@@ -285,6 +375,7 @@ instead_of = ["portable-anvil"]
 explanation = "Replace the original anvil block with this fixed version."
 commands = ["take anvil"]
 expect = ["That's fixed in place."]
+chapter_transcript = true
 -->
 ```inform7
 There is an anvil bolted into the ground in The Place.  
@@ -292,8 +383,23 @@ It is fixed in place.
 The description is 
 "The anvil is bolted into the ground for real.".
 ```
->\>**`take anvil`**  
->That's fixed in place.  
+<!-- inform-transcript: fixed-anvil -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see an anvil bolted into the ground here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take anvil</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">That&#x27;s fixed in place.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: fixed-anvil -->
 
 That'll show 'em.
 
@@ -308,14 +414,30 @@ instead_of = ["basic-things"]
 explanation = "Start a focused hammer example; this block supplies the hammer declaration and description."
 commands = ["look at handle"]
 expect = ["You can't see any such thing."]
+chapter_transcript = true
 -->
 ```inform7
 There is a hammer in The Place.  
 The description is 
 "It's an OK hammer but it has a solid gold handle."
 ```
->\>**`look at handle`**  
->You can't see any such thing  
+<!-- inform-transcript: hammer-description -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a hammer here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look at handle</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You can&#x27;t see any such thing.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: hammer-description -->
 
 Not what we want.  Luckily there's an easy way to fix it.
 
@@ -327,6 +449,7 @@ instead_of = ["hammer-description"]
 explanation = "Replace the preceding hammer block with a version that creates a separate handle."
 commands = ["look", "take handle"]
 expect = ["Taken."]
+chapter_transcript = true
 -->
 ```inform7
 There is a hammer in The Place.  
@@ -336,13 +459,30 @@ There is a handle in The Place.
 The description is 
 "It's made of solid gold.".
 ```
->**Place**  
->You're in the only place.  There are bushes.  
->  
->You can see a hammer and a handle here  
->  
->\>**`take handle`**  
->Taken.  
+<!-- inform-transcript: separate-handle -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">2 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a hammer and a handle here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a hammer and a handle here.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take handle</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: separate-handle -->
 
 Well that's not right either.    The handle is listed separately and we can take it.  Here's how we prevent that in Inform:
 
@@ -354,25 +494,38 @@ instead_of = ["separate-handle"]
 explanation = "Replace the separate-handle version with a handle that is part of the hammer."
 commands = ["look hammer", "look handle", "take handle"]
 expect = ["That seems to be a part of the hammer."]
+chapter_transcript = true
 -->
 ```inform7
 There is a hammer in The Place.  
 The description is "It definitely has a handle."
 The handle is a part of the hammer.  
 ```
-> **Place**  
->You're in the only place.  There are bushes.  
->  
->You can see a hammer here.  
->  
->**`look hammer`**  
->It definitely has a handle.  
->  
->**`look handle`**  
->You see nothing special about the handle.  
->  
->**`take handle`**  
->That seems to be a part of the hammer  
+<!-- inform-transcript: attached-handle -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">3 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a hammer here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look hammer</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">It definitely has a handle.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look handle</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You see nothing special about the handle.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take handle</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">That seems to be a part of the hammer.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: attached-handle -->
 
 Perfect.  Now it doesn't list the hammer or let us take it, but it knows the handle exists.  Not only that but parts can have parts.
 
@@ -422,6 +575,7 @@ explanation = "Replace the starting room description and add hills and clouds; c
 context = "The Place is a room."
 commands = ["look"]
 expect = ["You can see rolling hills and clouds here."]
+chapter_transcript = true
 -->
 ```inform7
 The description is "You're in the only place, and you can see beautiful rolling hills and the fluffiest of clouds."
@@ -430,10 +584,26 @@ They are fixed in place.
 There are clouds in the place.
 They are fixed in place.
 ```
->**Place**  
-> You're in the only place, and you can see beautiful rolling hills and the fluffiest of clouds.  
->  
->You can see rolling hills and clouds here  
+<!-- inform-transcript: background-listed -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place, and you can see beautiful rolling hills and the fluffiest of clouds.
+
+You can see rolling hills and clouds here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place, and you can see beautiful rolling hills and the fluffiest of clouds.
+
+You can see rolling hills and clouds here.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: background-listed -->
 
 That's pretty good, but since we made the rolling hills and clouds a part of our description, we don't need them described again.  Just like items can be `portable` or `fixed in place`, they can also be `described` or `undescribed`.  Things are `described` by default.
 
@@ -447,6 +617,7 @@ explanation = "Replace the listed-background version with undescribed hills and 
 context = "The Place is a room."
 commands = ["look", "take clouds"]
 expect = ["That's fixed in place."]
+chapter_transcript = true
 -->
 ```inform7
 The description is "You're in the only place, and you can see beautiful rolling hills and the fluffiest of clouds."
@@ -455,8 +626,26 @@ They are fixed in place.  They are undescribed.
 There are clouds in the place.
 They are fixed in place.  They are undescribed.
 ```
->**Place**  
-> You're in the only place, and you can see beautiful rolling hills and the fluffiest of clouds.  
+<!-- inform-transcript: background-undescribed -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">2 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place, and you can see beautiful rolling hills and the fluffiest of clouds.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place, and you can see beautiful rolling hills and the fluffiest of clouds.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take clouds</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">That&#x27;s fixed in place.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: background-undescribed -->
 
 Much better.  Having background things that are in the description is common, so there is a shortcut for `fixed in place` and `undescribed` at the same time.  
 
@@ -529,16 +718,30 @@ requires = ["the-place"]
 explanation = "Start a fresh fig example in the starting room."
 commands = ["eat fig"]
 expect = ["That's plainly inedible."]
+chapter_transcript = true
 -->
 ```inform7
 A yummy fig is here.
 ```
-I love figs!  
+I love figs!
 
-You can see a yummy fig here.
+<!-- inform-transcript: inedible-fig -->
 
->\>**`eat fig`**  
->That's plainly inedible  
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a yummy fig here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">eat fig</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">That&#x27;s plainly inedible.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: inedible-fig -->
 
 Easy to remedy:
 
@@ -550,18 +753,33 @@ instead_of = ["inedible-fig"]
 explanation = "Replace the original fig declaration with the edible version."
 commands = ["eat fig", "look fig"]
 expect = ["You eat the yummy fig. Not bad."]
+chapter_transcript = true
 -->
 ```inform7
 A yummy fig is here.  It is edible.
 ```
-> You can see a yummy fig here.  
->  
->\>**`eat fig`**  
->(first taking the yummy fig)  
->You eat the yummy fig. Not bad.  
->  
->\>**`look fig`**   
->You can't see any such thing  
+<!-- inform-transcript: edible-fig -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">2 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a yummy fig here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">eat fig</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the yummy fig)
+You eat the yummy fig. Not bad.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look fig</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You can&#x27;t see any such thing.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: edible-fig -->
 
 ### Things you can wear
 
@@ -574,17 +792,31 @@ requires = ["the-place"]
 explanation = "Start the shirt example before making it wearable."
 commands = ["wear shirt"]
 expect = ["You can't wear that!"]
+chapter_transcript = true
 -->
 ```inform7
 There is a shirt in The Place.
 ```
 Naturally someone is going to want to wear it.  
   
-> You can see a shirt here.  
->  
->\>**`wear shirt`**  
->(first taking the shirt)  
->You can't wear that  
+<!-- inform-transcript: ordinary-shirt -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a shirt here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">wear shirt</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the shirt)
+You can&#x27;t wear that!</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: ordinary-shirt -->
 
 In Inform, something can be `wearable`.
 
@@ -596,28 +828,45 @@ instead_of = ["ordinary-shirt"]
 explanation = "Replace the shirt declaration with this wearable version."
 commands = ["wear shirt", "inventory", "take off shirt", "inventory"]
 expect = ["You put on the shirt."]
+chapter_transcript = true
 -->
 ```inform7
 There is a shirt in The Place.
 It is wearable.
 ```
 
-> You can see a shirt here.    
->  
->\>**`wear shirt`**  
->(first taking the shirt)  
->You put on the shirt.  
->  
->\>**`inventory`**  
->You are carrying:  
->&nbsp;&nbsp;&nbsp;&nbsp;a shirt (being worn)  
->  
->\>**`take off shirt`**  
->You take off the shirt.  
->
->\>**`inventory`**  
->You are carrying:  
->&nbsp;&nbsp;&nbsp;&nbsp;a shirt  
+<!-- inform-transcript: wearable-shirt -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">4 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a shirt here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">wear shirt</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the shirt)
+You put on the shirt.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  a shirt (being worn)</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take off shirt</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You take off the shirt.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  a shirt</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: wearable-shirt -->
 
 ### Things you start out wearing (and holding) 
 
@@ -630,14 +879,28 @@ requires = ["the-place"]
 explanation = "Add clothing worn by the player at the beginning of play."
 commands = ["inventory"]
 expect = ["red pants (being worn)"]
+chapter_transcript = true
 -->
 ```inform7
 The player wears red pants.
 ```
 
->\>**`inventory`**  
->You are carrying:  
->&nbsp;&nbsp;&nbsp;&nbsp;red pants (being worn)
+<!-- inform-transcript: wearing-pants -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">inventory</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You are carrying:
+  red pants (being worn)</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: wearing-pants -->
 
 (Notice that we don't have to say the pants are `wearable`.)
 
@@ -673,16 +936,30 @@ requires = ["the-place"]
 explanation = "Start the bowl and figurine example before making the bowl a container."
 commands = ["put figurine in bowl"]
 expect = ["That can't contain things."]
+chapter_transcript = true
 -->
 ```inform7
 There is a deep wooden bowl in The Place. 
 There is a small carved monkey figurine in the Place.
 ```
-> You can see a deep wooden bowl and a small carved monkey figurine here.  
->   
->\>**`put the figurine in the bowl`**  
->(first taking the small carved monkey figurine)  
->That can't contain things  
+<!-- inform-transcript: ordinary-bowl -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a deep wooden bowl and a small carved monkey figurine here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">put figurine in bowl</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the small carved monkey figurine)
+That can&#x27;t contain things.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: ordinary-bowl -->
 
 We can fix that:
 
@@ -694,6 +971,7 @@ instead_of = ["ordinary-bowl"]
 explanation = "Replace the original bowl and figurine block with a container version."
 commands = ["put figurine in bowl", "look bowl", "take figurine", "look bowl"]
 expect = ["The deep wooden bowl is empty."]
+chapter_transcript = true
 -->
 ```inform7
 There is a deep wooden bowl in The Place. 
@@ -701,20 +979,37 @@ It is a container.
 There is a small carved monkey figurine in the Place.
 ```
 Now we get:
->You can see a deep wooden bowl (empty) and a small carved monkey figurine here.  
->  
->**put the figurine in the bowl**  
->(first taking the small carved monkey figurine)  
->You put the small carved monkey figurine into the deep wooden bowl.  
->  
->\>**`look bowl`**  
->In the deep wooden bowl is a small carved monkey figurine  
->  
->\>**`take the figurine`**  
->Taken.  
->  
->\>**`look bowl`**  
->The deep wooden bowl is empty  
+
+<!-- inform-transcript: container-bowl -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">4 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a deep wooden bowl (empty) and a small carved monkey figurine here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">put figurine in bowl</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">(first taking the small carved monkey figurine)
+You put the small carved monkey figurine into the deep wooden bowl.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look bowl</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">In the deep wooden bowl is a small carved monkey figurine.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take figurine</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look bowl</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The deep wooden bowl is empty.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: container-bowl -->
 
 If we want something to start out inside a container, that's simple too:
 
@@ -726,6 +1021,7 @@ instead_of = ["container-bowl"]
 explanation = "Replace the bowl example so the figurine starts inside it."
 commands = ["look bowl"]
 expect = ["a small carved monkey figurine"]
+chapter_transcript = true
 -->
 ```inform7
 There is a deep wooden bowl in The Place. 
@@ -735,7 +1031,23 @@ There is a small carved monkey figurine in the bowl.
 
 Now:
 
-> You can see a deep wooden bowl (in which is a small carved monkey figurine) here.
+<!-- inform-transcript: filled-bowl -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">1 command</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a deep wooden bowl (in which is a small carved monkey figurine) here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look bowl</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">In the deep wooden bowl is a small carved monkey figurine.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: filled-bowl -->
 
 ### Containers that open and close
 Lots of things that aren't containers can open and close (books, gates, tulips, hearts) but in Inform, *only containers can open and close* (without extra programming).
@@ -749,6 +1061,7 @@ requires = ["the-place"]
 explanation = "Start a new jewelry box example in the starting room."
 commands = ["close box", "look box", "open box", "look box"]
 expect = ["revealing a necklace"]
+chapter_transcript = true
 -->
 ```inform7
 There is a jewelry box in The Place.
@@ -759,21 +1072,37 @@ There is a necklace in the box.
 ```
 With that one small sentence, we get this:
 
->You can see a jewelry box (in which is a gentle necklace) here.  
->  
->\>**`close box`**  
->You close the jewelry box.  
->  
->\>**`look box`**  
->It's a super fancy box.  
->  
->\>**`open box`**  
->You open the jewelry box, revealing a gentle necklace.  
->  
->\>**`look box`**  
->It's a super fancy box.  
->  
->In the jewelry box is a gentle necklace  
+<!-- inform-transcript: openable-box -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">4 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a jewelry box (in which is a necklace) here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">close box</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You close the jewelry box.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look box</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">It&#x27;s a super fancy box.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">open box</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You open the jewelry box, revealing a necklace.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look box</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">It&#x27;s a super fancy box.
+
+In the jewelry box is a necklace.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: openable-box -->
 
 As you can see, `openable` containers can be `open` or `closed`, and if you don't say they're `closed` they start out open.  We can have it either way:
 
@@ -822,6 +1151,7 @@ requires = ["the-place"]
 explanation = "A separate container example demonstrating visibility through a closed container."
 commands = ["look hamster ball", "take plush hamster", "open ball", "take plush hamster"]
 expect = ["The hamster ball isn't open."]
+chapter_transcript = true
 -->
 ```inform7
 There is a hamster ball in The Place.
@@ -829,8 +1159,35 @@ It is a closed openable transparent container.
 There is a plush hamster in the ball.
 ```
 
->\>**`look hamster ball`**  
->In the hamster ball is a plush hamster  
+<!-- inform-transcript: transparent-ball -->
+
+<figure class="if-terminal" aria-label="Example gameplay transcript" style="margin: 24px 0; max-width: 100%; overflow: hidden; border: 1px solid #34494b; border-radius: 12px; background: #152326; color: #e5ede5; box-shadow: 0 6px 18px rgba(20, 31, 26, 0.12);">
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #34494b; background: #1d3032; color: #bdcfc4; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.1em; text-transform: uppercase;"><span>Example play</span><span style="font-weight: 400; letter-spacing: 0; text-transform: none;">4 commands</span></figcaption>
+<div style="padding: clamp(16px, 4vw, 24px); font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;">
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Place
+You&#x27;re in the only place.
+
+You can see a hamster ball (closed) (in which is a plush hamster) here.</samp></pre>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">look hamster ball</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">In the hamster ball is a plush hamster.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take plush hamster</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">The hamster ball isn&#x27;t open.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">open ball</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">You open the hamster ball.</samp></pre>
+</div>
+<div style="margin-top: 22px;">
+<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px; color: #d1ef9f; font: inherit;"><span aria-hidden="true" style="color: #8dbba3;">&gt;</span><kbd style="padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0;">take plush hamster</kbd></div>
+<pre style="margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere;"><samp style="color: inherit; font: inherit;">Taken.</samp></pre>
+</div>
+</div>
+</figure>
+
+<!-- /inform-transcript: transparent-ball -->
 
 ## @TODO Remaining thing topics
 
