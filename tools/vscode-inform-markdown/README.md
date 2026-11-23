@@ -21,7 +21,7 @@ In VS Code, choose **Extensions → ⋯ → Install from VSIX**, then select
 `prototype/build/inform-markdown-0.1.0.vsix`. If the editor was already open,
 run **Developer: Reload Window** afterward.
 
-Open `places/README.md` in the text editor. Quoted descriptions and comments inside
+Open `book/places/README.md` in the text editor. Quoted descriptions and comments inside
 the `inform7` fences should use the same colors as standalone Inform source.
 Prose, other languages, and gameplay transcripts retain their usual highlighting.
 

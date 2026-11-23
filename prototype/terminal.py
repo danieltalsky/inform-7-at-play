@@ -39,8 +39,7 @@ class Transcript:
 
 
 def literal_text(value):
-    # HTML-escape first, then encode braces so Jekyll's Liquid pass leaves story
-    # text such as {{ a name }} or {% a command %} alone when building Markdown.
+    # Preserve the existing HTML encoding for braces in generated transcripts.
     return Markup(escape(str(value)).replace("{", "&#123;").replace("}", "&#125;"))
 
 

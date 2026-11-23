@@ -1,8 +1,8 @@
 # FTPS deployment
 
 The public site is **https://informatplay.danieltalsky.com/**.
-The site is built into `dist/`. The existing **Executable documentation** workflow
-tests the export, compiles and plays every Inform example, and saves the site as
+The site is built into `dist/`. The existing **Verify and publish** workflow
+runs independent site and Inform-example checks, and saves the site as
 the `static-site` artifact. A successful push or manual run on `maestra` then
 deploys that exact artifact when deployment is enabled. Pull requests only run
 checks. Deployment jobs run one at a time and skip superseded revisions.
@@ -16,7 +16,7 @@ mirrors the **contents** of `dist` into the login directory (`.`), including
 deleting remote files and directories absent from the build. Any required
 `.htaccess` or other public server files must therefore be included in the build.
 
-In the repository's **Settings → Secrets and variables → Actions**, add:
+In the repository's **Settings -> Secrets and variables -> Actions**, add:
 
 | Repository secret | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ provider. All site links are relative; the build needs no domain setting.
 
 ## First deployment and routine updates
 
-After enabling deployment, open **Actions → Executable documentation → Run
+After enabling deployment, open **Actions -> Verify and publish -> Run
 workflow**, selecting `maestra`. Verify that both the checks and **Deploy via
 FTPS** succeed, then open the HTTPS site and check a chapter and its styling.
 Changes to secrets or variables alone do not trigger a deployment.
@@ -56,8 +56,5 @@ connection and rerun the latest `maestra` workflow to converge on the build.
 To roll back, revert the relevant change through a PR and deploy the resulting
 new revision. Older workflow runs are skipped if their commit is no longer the
 tip of `maestra`.
-
-GitHub Pages' legacy Jekyll deployment is separate from this workflow. It remains
-enabled until explicitly retired; it does not publish the themed `dist` output.
 
 Implementation: [lftp mirror and FTPS documentation](https://lftp.yar.ru/lftp-man.html).

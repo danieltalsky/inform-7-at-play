@@ -1,7 +1,12 @@
-# Executable documentation prototype
+# Executable examples and transcripts
 
-This prototype compiles examples from the documentation and generates transcripts
+This pipeline compiles examples from `book/` and generates transcripts
 from actual gameplay. Read [the generated page](generated.md) for the result.
+
+This is the Inform example pipeline. Website HTML export, themes, assets, and
+deployment live separately in [publishing/](../publishing/README.md). For a
+repository overview, see [CONTRIBUTING.md](../CONTRIBUTING.md). The `prototype/`
+path is retained so existing commands and local compiler caches keep working.
 
 ## Setup
 
@@ -36,7 +41,8 @@ uv run --project . python -m unittest discover -s prototype -p test_runner.py
 ```
 
 The first command updates [generated.md](generated.md) and the selected transcript
-region in the opening section of [Making Places](../places/README.md). The second
+regions in [Making Places](../book/places/README.md),
+[Naming things](../book/naming/README.md), and [All About Things](../book/things/README.md). The second
 independently compiles and plays all examples, checks expected response fragments,
 and fails if either output differs, without editing files. Review generated diffs
 before accepting intentional changes.
@@ -116,7 +122,7 @@ A shiny apple is in the Beautiful Breezeway. It is edible.
 For an addition, use `kind = "additive"` and `requires = ["breezeway"]`.
 For a replacement, use `kind = "alternative"`, name the earlier block in
 `instead_of`, and retain only its shared prerequisites in `requires`.
-See `basic-things` and `wearable-shirt` in [the things chapter](../things/README.md)
+See `basic-things` and `wearable-shirt` in [the things chapter](../book/things/README.md)
 for real additive and alternative recipes. Keep the IDs stable when editing or
 moving blocks.
 
@@ -137,15 +143,14 @@ generated page and gallery show the actual output of every code sample.
 
 [templates/terminal.html](templates/terminal.html) is the shared Jinja template for
 the chapter transcript and the proof page. All styles are inline so it works in
-the existing Jekyll site and VS Code's Markdown preview without a separate stylesheet
+the published site and VS Code's Markdown preview without a separate stylesheet
 or runtime JavaScript. GitHub's own Markdown renderer may strip the inline styles.
 
 Commands and responses are kept as separate data from the interpreter's input
 boundaries. The renderer never guesses whether story text containing `>` is a
 command. Commands use semantic `kbd` elements, responses use `samp`, and both
-wrap on narrow screens. Text is escaped for HTML and braces are encoded to keep
-Jekyll's Liquid processor from interpreting literal story text as template code.
-The Jinja source directory is excluded from Jekyll processing.
+wrap on narrow screens. Text is escaped for HTML, including braces in literal
+story text.
 
 Plain-text transcripts still live under `prototype/build/EXAMPLE_ID/transcript.txt`.
 Styling changes don't alter the gameplay checks or those text exports. To preview
@@ -232,9 +237,9 @@ not install or modify the WSL distribution.
 
 ## Linux CI
 
-[The GitHub Actions workflow](../.github/workflows/executable-documentation.yml)
-runs on pushes, pull requests, and manual dispatches using Ubuntu 24.04 and Python
-3.13. It installs locked dependencies, extracts the checksum-pinned official Linux
+[The GitHub Actions workflow](../.github/workflows/verify-and-publish.yml)
+runs its Inform-example job on pushes, pull requests, and manual dispatches using
+Ubuntu 24.04 and Python 3.13. It installs locked dependencies, extracts the checksum-pinned official Linux
 Inform package, builds the console interpreter, runs the contract tests, and
 compiles and plays every example with `--check`. It never updates the generated
 page automatically. Compiler logs and transcripts are retained as diagnostic

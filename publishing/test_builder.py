@@ -6,7 +6,7 @@ import unittest
 from bs4 import BeautifulSoup
 
 from markdown_it import MarkdownIt
-from site_builder import build, highlight, hide_todos, PAGES, ROOT
+from publishing.build import build, highlight, hide_todos, PAGES, ROOT, BOOK
 
 
 class StaticSiteTests(unittest.TestCase):
@@ -65,7 +65,7 @@ class StaticSiteTests(unittest.TestCase):
             md = MarkdownIt('commonmark', {'html': True})
             expected_sources = sum(
                 sum(t.type == 'fence' and t.info.strip() == 'inform7'
-                    for t in hide_todos(md.parse((ROOT / slug / 'README.md').read_text(encoding='utf-8'))))
+                    for t in hide_todos(md.parse((BOOK / slug / 'README.md').read_text(encoding='utf-8'))))
                 for slug, _, _ in PAGES)
             exported_sources = sum(len(BeautifulSoup(p.read_text(encoding='utf-8'), 'html.parser').select('.language-inform7')) for p in output.rglob('*.html'))
             self.assertEqual(exported_sources, expected_sources)

@@ -3,7 +3,7 @@
 Build the complete site from the repository root:
 
 ```powershell
-uv run --project . python site_builder.py
+uv run --project . --group publishing python -m publishing.build
 ```
 
 Open `dist/index.html` directly, or serve it locally:
@@ -20,11 +20,11 @@ order. Existing handwritten transcripts are preserved; this export does not
 compile or regenerate gameplay. The wordmark currently loads Literata from
 Google Fonts, with Cambria/serif fallbacks.
 
-To create another theme, copy `themes/at-play` to another named directory and edit
+To create another theme, copy `publishing/themes/at-play` to another named directory and edit
 its templates and assets. Select it with:
 
 ```powershell
-uv run --project . python site_builder.py --theme my-theme --output dist-my-theme
+uv run --project . --group publishing python -m publishing.build --theme my-theme --output dist-my-theme
 ```
 
 `page.html` controls the shell and chapter navigation; `code.html` and
@@ -44,7 +44,7 @@ multi-size ICO, 16/32/48/256px PNG, and 180px Apple touch-icon formats. Every pa
 links to these assets using relative URLs. To regenerate the set on Windows:
 
 ```powershell
-./tools/generate_favicons.ps1
+./publishing/generate_favicons.ps1
 ```
 
 The generator draws the vector and raster versions from the same geometry;

@@ -25,25 +25,27 @@ name = "inform-7-at-play"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "beautifulsoup4" },
     { name = "jinja2" },
-    { name = "markdown-it-py" },
 ]
 
 [package.dev-dependencies]
 build = [
     { name = "ziglang" },
 ]
+publishing = [
+    { name = "beautifulsoup4" },
+    { name = "markdown-it-py" },
+]
 
 [package.metadata]
-requires-dist = [
-    { name = "beautifulsoup4", specifier = "==4.14.2" },
-    { name = "jinja2", specifier = "==3.1.6" },
-    { name = "markdown-it-py", specifier = "==4.0.0" },
-]
+requires-dist = [{ name = "jinja2", specifier = "==3.1.6" }]
 
 [package.metadata.requires-dev]
 build = [{ name = "ziglang", specifier = "==0.15.2" }]
+publishing = [
+    { name = "beautifulsoup4", specifier = "==4.14.2" },
+    { name = "markdown-it-py", specifier = "==4.0.0" },
+]
 
 [[package]]
 name = "jinja2"
