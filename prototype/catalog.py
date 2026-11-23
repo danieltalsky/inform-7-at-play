@@ -5,7 +5,7 @@ import re
 import tomllib
 
 ROOT = Path(__file__).resolve().parent.parent
-DOCUMENTS = ["README.md", *[f"{name}/README.md" for name in
+DOCUMENTS = ["book/README.md", *[f"book/{name}/README.md" for name in
              ("places", "things", "actions", "people", "setup", "getting-started", "naming", "mistakes")]]
 BLOCK = re.compile(
     r"<!-- inform-example: ([a-z0-9-]+)(.*?)-->\s*\n```inform7[^\n]*\n(.*?)```", re.DOTALL)

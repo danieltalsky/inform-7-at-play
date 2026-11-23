@@ -11,6 +11,15 @@ The initial deployment setup may be committed directly to `maestra`. Once
 deployment is in place, use feature branches and pull requests targeting
 `maestra` for subsequent changes; do not push directly unless explicitly asked.
 
+## Repository organization
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the repository map. Website export,
+themes, assets, and deployment belong in `publishing/`; Inform compilation and
+transcript generation remain in `prototype/`. Keep their entry points and CI
+checks independent. Reader content lives in `book/`; the root README is the
+project overview. Source paths under `book/` must not add a `book/` prefix to
+published chapter URLs.
+
 ## Inform 7 reference
 
 Before answering Inform questions or editing Inform examples, read

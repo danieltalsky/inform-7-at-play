@@ -29,4 +29,4 @@ unset FTP_PASSWORD
 
 # Credentials are passed as data, never interpolated into lftp commands.
 lftp --norc --env-password --user "$FTP_USERNAME" --port "$port" \
-  "ftp://$FTP_HOST" -e "$(cat deploy/mirror.lftp)"
+  "ftp://$FTP_HOST" -e "$(cat publishing/deploy/mirror.lftp)"

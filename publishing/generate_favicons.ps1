@@ -1,7 +1,7 @@
 # Regenerate the theme's favicon set using Windows System.Drawing.
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
-$output = Join-Path $PSScriptRoot '../themes/at-play/assets/favicons'
+$output = Join-Path $PSScriptRoot 'themes/at-play/assets/favicons'
 New-Item -ItemType Directory -Path $output -Force | Out-Null
 
 $svg = @'

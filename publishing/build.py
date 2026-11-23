@@ -10,7 +10,9 @@ from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 from markdown_it import MarkdownIt
 
-ROOT = Path(__file__).resolve().parent
+PUBLISHING = Path(__file__).resolve().parent
+ROOT = PUBLISHING.parent
+BOOK = ROOT / 'book'
 PAGES = [('', 'Home', ''), ('getting-started', 'Started', 'Getting'),
          ('places', 'Places', 'Going'),
          ('things', 'Things', 'Making'), ('actions', 'Actions', 'Doing'),
@@ -166,7 +168,7 @@ def validate_export(output):
 
 
 def build(output, theme):
-    theme_dir = ROOT / 'themes' / theme
+    theme_dir = PUBLISHING / 'themes' / theme
     if not theme_dir.is_dir():
         raise ValueError(f'Unknown theme: {theme}')
     if output.resolve() == ROOT or ROOT.is_relative_to(output.resolve()):
@@ -185,7 +187,7 @@ def build(output, theme):
     output.mkdir(parents=True, exist_ok=True)
     shutil.copytree(theme_dir / 'assets', output / 'assets', dirs_exist_ok=True)
     for index, (slug, label, _) in enumerate(PAGES):
-        source = ROOT / slug / 'README.md'
+        source = BOOK / slug / 'README.md'
         title, content = render_chapter(source.read_text(encoding='utf-8'), slug, md, env)
         prefix = '../' if slug else ''
         nav = [dict(label=name, verb=verb, title='Getting started' if section == 'getting-started' else name, active=section == slug,
